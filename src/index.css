@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+.quote-text {
+  position: relative;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.quote-text::before,
+.quote-text::after {
+  content: "";
+  position: absolute;
+  width: 2.5rem;
+  height: 2.5rem;
+  opacity: 0.15;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.quote-text::before {
+  left: -0.5rem;
+  top: 0;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='%239b28b0' viewBox='0 0 24 24'><path d='M9.17 6.17A4.98 4.98 0 0 0 7 11v7h7v-7a5 5 0 0 0-4.83-4.83zM3 11a7 7 0 0 1 5.17-6.75A4 4 0 0 1 12 8v10H3v-7zm18 0a7 7 0 0 0-5.17-6.75A4 4 0 0 0 12 8v10h9v-7z'/></svg>");
+}
+
+.quote-text::after {
+  right: -0.5rem;
+  top: 0;
+  transform: scaleX(-1) scaleY(-1);
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='%239b28b0' viewBox='0 0 24 24'><path d='M9.17 6.17A4.98 4.98 0 0 0 7 11v7h7v-7a5 5 0 0 0-4.83-4.83zM3 11a7 7 0 0 1 5.17-6.75A4 4 0 0 1 12 8v10H3v-7zm18 0a7 7 0 0 0-5.17-6.75A4 4 0 0 0 12 8v10h9v-7z'/></svg>");
+}
