@@ -4,6 +4,7 @@ import Header from "./ui/Header";
 import Home from "./Pages/Home.";
 import Footer from "./ui/Footer";
 import { Routes, Route } from "react-router-dom";
+import AboutUs from "./Pages/AboutUs";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/about-us" element={<AboutUs />} />
       </Routes>
       <Footer />
     </ThemeProvider>

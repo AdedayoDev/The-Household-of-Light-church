@@ -109,7 +109,7 @@ const Footer = () => {
                           type="email"
                           placeholder="Enter your email"
                           {...field}
-                          className="placeholder:text-white/80"
+                          className="placeholder:text-white/80 text-white"
                         />
                       </FormControl>
                       <FormMessage />
