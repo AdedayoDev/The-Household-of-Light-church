@@ -3,7 +3,8 @@ import { FaYoutube } from "react-icons/fa";
 
 const Hero = () => {
   return (
-    <div className="w-full h-10/12 bg-slate-500 ">
+    <div className="h-[90vh] w-full bg-slate-400 
+        flex items-center justify-center">
       <div className="w-10/12 mx-auto flex flex-col items-center justify-center space-y-5  py-20">
         <h3 className="capitalize font-semibold text-5xl text-center text-white">welcome to </h3>
         <h2 className="uppercase text-6xl font-semibold text-center text-white">the household of light church</h2>

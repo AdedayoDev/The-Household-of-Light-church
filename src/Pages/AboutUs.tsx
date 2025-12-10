@@ -1,10 +1,15 @@
-import Hero from '@/AboutUs/Hero'
+import CalledToPreach from '@/AboutUs/CalledToPreach'
+import DoctrineVisonMission from '@/AboutUs/DoctrineVisonMission'
+import AboutUsHero from '@/AboutUs/Hero'
+
 
 
 const AboutUs = () => {
   return (
     <div>
-      <Hero />
+     <AboutUsHero/>
+     <CalledToPreach />
+     <DoctrineVisonMission/>
     </div>
   )
 }
