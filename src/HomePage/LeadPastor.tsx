@@ -1,13 +1,25 @@
-const LeadPastor = () => {
+import {type FC} from "react"
+
+interface LeadPastorProps {
+  wrapperClassName?: string;
+  titleClassName?: string;
+  textClassName?: string;
+}
+
+const LeadPastor: FC<LeadPastorProps> = ({
+  wrapperClassName = "",
+  textClassName = "",
+  titleClassName = "",
+}) => {
   return (
-    <div className="w-full py-12 text-justify">
+    <div className={`w-full py-12 text-justify ${wrapperClassName}`}>
       <div className="flex items-center justify-between w-10/12 mx-auto gap-10">
         <div className="w-1/2">
           <img src="leadPastor.svg" alt="Our Lead Pastor" className="w-[481px] h-[483px]" />
         </div>
 
-        <div className="w-1/2 space-y-10">
-          <h2 className="uppercase font-semibold text-3xl text-transparent bg-clip-text bg-linear-to-r from-[#9b28b0] to-black">our lead pastor</h2>
+        <div className={`w-1/2 space-y-10 ${textClassName}`}>
+          <h2 className={`uppercase font-semibold text-3xl text-transparent bg-clip-text bg-linear-to-r from-[#9b28b0] to-black ${titleClassName}`}>our lead pastor</h2>
           <p className="flex flex-col w-[592p]  space-y-4  pr-20">
             <span className="">
               Pastor Ipaye Isaac is a passionate minister of the Gospel,
