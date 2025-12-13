@@ -5,6 +5,7 @@ import Home from "./Pages/Home.";
 import Footer from "./ui/Footer";
 import { Routes, Route } from "react-router-dom";
 import AboutUs from "./Pages/AboutUs";
+import Partner from "./Pages/Partner";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/partner" element={<Partner/>} />
       </Routes>
       <Footer />
     </ThemeProvider>
