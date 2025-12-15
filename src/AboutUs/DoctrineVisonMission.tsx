@@ -1,6 +1,7 @@
 import type { FC } from "react";
 import { motion } from "framer-motion";
 
+
 // --------------------
 // ANIMATION VARIANTS
 // --------------------
@@ -50,7 +51,7 @@ const DoctrineVisionMission: FC = () => {
           {/* Content */}
           <div className="relative p-10 flex justify-end items-end">
             <div className="bg-white/90 backdrop-blur-md shadow-lg rounded-2xl p-8 w-full md:w-7/12 space-y-10">
-              <h2 className="uppercase text-4xl font-bold text-center bg-linear-to-r from-black to-[#9b28b0] bg-clip-text text-transparent tracking-wide">
+              <h2 className="uppercase text-4xl font-bold text-center bg-linear-to-r from-black to-primary bg-clip-text text-transparent tracking-wide">
                 our code of doctrine
               </h2>
 
@@ -96,7 +97,7 @@ const DoctrineVisionMission: FC = () => {
 
             <div className="relative p-10 flex justify-center items-center">
               <div className="bg-white/90 backdrop-blur-md shadow-lg rounded-2xl p-8 flex flex-col gap-5 text-center">
-                <h2 className="uppercase text-3xl font-bold bg-gradient-to-r from-black to-[#9b28b0] bg-clip-text text-transparent">
+                <h2 className="uppercase text-3xl font-bold bg-gradient-to-r from-black to-primary bg-clip-text text-transparent">
                   our mission
                 </h2>
                 <p className="text-gray-700 leading-relaxed text-lg text-justify">
@@ -122,7 +123,7 @@ const DoctrineVisionMission: FC = () => {
 
             <div className="relative p-10 flex justify-center items-center">
               <div className="bg-white/90 backdrop-blur-md shadow-lg rounded-2xl p-8 flex flex-col gap-5 text-center">
-                <h2 className="uppercase text-3xl font-bold bg-gradient-to-r from-black to-[#9b28b0] bg-clip-text text-transparent">
+                <h2 className="uppercase text-3xl font-bold bg-gradient-to-r from-black to-primary bg-clip-text text-transparent">
                   our vision
                 </h2>
                 <p className="text-gray-700 leading-relaxed text-lg text-justify">

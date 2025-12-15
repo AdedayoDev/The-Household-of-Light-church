@@ -1,4 +1,4 @@
-"use client";
+
 
 import { motion, type Variants } from "framer-motion";
 import {
@@ -132,7 +132,7 @@ const Testimonials = () => {
       >
         <motion.h2
           variants={headerItemVariants}
-          className="uppercase font-semibold text-4xl text-transparent bg-linear-to-tr from-[#9B28B0] to-black bg-clip-text text-center"
+          className="uppercase font-semibold text-4xl text-transparent bg-linear-to-tr from-primary to-black bg-clip-text text-center"
         >
           testimony
         </motion.h2>

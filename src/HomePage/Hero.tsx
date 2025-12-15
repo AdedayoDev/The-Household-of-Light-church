@@ -2,6 +2,7 @@ import { motion, type Variants } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { FaYoutube } from "react-icons/fa";
 
+
 /* ---------------------------------
    Animation Variants (Typed)
 ---------------------------------- */

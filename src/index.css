@@ -1,9 +1,20 @@
 @import "tailwindcss";
 
+@theme {
+  --color-primary: #9B28B0;
+  --color-secondary: #e86f00;
+  --color-primaryDark: #db5609;
+  --color-dark: #656565;
+}
+
 .quote-text {
   position: relative;
   padding-left: 3rem;
   padding-right: 3rem;
+}
+
+.primary-btn {
+  @apply bg-primary w-full text-white px-4 py-2 rounded-md hover:bg-secondary duration-300
 }
 
 .quote-text::before,

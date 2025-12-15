@@ -1,3 +1,5 @@
+
+
 const OurServices = () => {
   interface Services {
     id: number;
@@ -45,7 +47,7 @@ const OurServices = () => {
   return (
     <div className="w-full py-10">
       <div className="w-10/12 mx-auto flex flex-col items-center justify-center space-y-6 ">
-        <h2 className="uppercase text-transparent bg-linear-to-t from-[#9b28b0] to-black bg-clip-text text-4xl font-bold ">
+        <h2 className="uppercase text-transparent bg-linear-to-t from-primary to-black bg-clip-text text-4xl font-bold ">
           our services
         </h2>
         <p className="font-medium text-black dark:text-slate-100 text-center px-42">

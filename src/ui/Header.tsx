@@ -35,7 +35,7 @@ const Header = () => {
                   to={item.to}
                   className={({ isActive }) =>
                     isActive
-                      ? "text-[#9B28B0] font-extrabold dark:text-white"
+                      ? "text-PRIMARY font-extrabold dark:text-white"
                       : "dark:text-slate-300  text-[#333] font-bold"
                   }
                 >
@@ -48,7 +48,7 @@ const Header = () => {
 
         <div className="flex items-center justify-center gap-2">
           <div>
-            <Button className="bg-[#9b28b0] rounded-lg text-white">Give</Button>
+            <Button className="bg-primary rounded-lg text-white">Give</Button>
           </div>
           <Themetoggler />
         </div>

@@ -1,3 +1,4 @@
+
 const CalledToPreach = () => {
   return (
     <section className="w-full bg-white py-12 ">
@@ -5,15 +6,15 @@ const CalledToPreach = () => {
       
         <h3 className="font-medium text-4xl w-[432px]">
           called to{" "}
-          <span className="text-[#9B28B0] uppercase font-semibold text-4xl">
+          <span className="text-primary uppercase font-semibold text-4xl">
             PREACH THE GOSPEL{" "}
           </span>{" "}
           with simplicity, with{" "}
-          <span className="text-[#9B28B0] uppercase font-semibold text-4xl">
+          <span className="text-primary uppercase font-semibold text-4xl">
             SIGNS{" "}
           </span>
           and{" "}
-          <span className="text-[#9B28B0] uppercase font-semibold text-4xl">
+          <span className="text-primary uppercase font-semibold text-4xl">
             WONDERS FOLLOWING
           </span>
         </h3>

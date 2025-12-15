@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 
+
 // --------------------
 // TYPES
 // --------------------
@@ -57,7 +58,7 @@ const DiscipleshipStructure = () => {
     <section className="w-full py-12 ">
       {/* HEADER */}
       <div className="w-10/12 mx-auto flex flex-col gap-4 items-center text-center mb-14">
-        <h2 className="uppercase font-bold text-4xl tracking-wide bg-linear-to-l from-black to-[#9B28B0] bg-clip-text text-transparent">
+        <h2 className="uppercase font-bold text-4xl tracking-wide bg-linear-to-l from-black to-primary bg-clip-text text-transparent">
           Our Discipleship Structure
         </h2>
 
@@ -87,7 +88,7 @@ const DiscipleshipStructure = () => {
               "
             >
               <CardHeader className="pb-2">
-                <CardTitle className="text-2xl font-semibold text-[#9B28B0]">
+                <CardTitle className="text-2xl font-semibold text-primary">
                   {item.header}
                 </CardTitle>
               </CardHeader>

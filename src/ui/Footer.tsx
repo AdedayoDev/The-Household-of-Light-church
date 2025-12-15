@@ -41,7 +41,7 @@ const Footer = () => {
   const year = theDate.getFullYear();
 
   return (
-    <footer className="w-full bg-[#9b28b0]">
+    <footer className="w-full bg-primary">
       {/* Donate */}
       <div className="w-10/12 mx-auto relative">
         <div
@@ -61,7 +61,7 @@ const Footer = () => {
               <Button className="capitalize" variant="church">
                 Give now
               </Button>
-              <Button className="font-medium text-xl bg-white text-[#9b28b0] hover:bg-slate-100">
+              <Button className="font-medium text-xl bg-white text-primary hover:bg-slate-100">
                 Radio Program Partnership
               </Button>
             </div>
@@ -72,7 +72,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="bg-[#9b28b0]"></div>
+        <div className="bg-primary"></div>
       </div>
 
       {/* Mailing List */}
@@ -120,7 +120,7 @@ const Footer = () => {
                 {/* SUBMIT BUTTON */}
                 <Button
                   type="submit"
-                  className="w-full bg-white text-[#9b28b0] hover:bg-slate-100"
+                  className="w-full bg-white text-primary hover:bg-slate-100"
                 >
                   Submit
                 </Button>

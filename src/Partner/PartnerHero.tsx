@@ -23,7 +23,7 @@ const PartnerHero = () => {
           strengthening believers, and advancing the gospel. Thank you for
           partnering with us.
         </p>
-         <Button className=" capitalize bg-white text-[#9B28B0] px-6 py-2">
+         <Button className=" capitalize bg-white text-primary px-6 py-2">
           give now
         </Button>
       </div>

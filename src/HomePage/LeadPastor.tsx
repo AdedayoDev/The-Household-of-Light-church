@@ -4,6 +4,7 @@ import { type FC } from "react";
 import { motion, type Variants } from "framer-motion";
 import { Button } from "@/components/ui/button";
 
+
 interface LeadPastorProps {
   wrapperClassName?: string;
   titleClassName?: string;
@@ -134,7 +135,7 @@ const LeadPastor: FC<LeadPastorProps> = ({
         >
           <motion.h2
             variants={paragraphVariants}
-            className={`uppercase font-semibold text-3xl text-transparent bg-clip-text bg-linear-to-r from-[#9b28b0] to-black ${titleClassName}`}
+            className={`uppercase font-semibold text-3xl text-transparent bg-clip-text bg-linear-to-r from-primary to-black ${titleClassName}`}
           >
             our lead pastor
           </motion.h2>
