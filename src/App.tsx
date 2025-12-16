@@ -6,6 +6,7 @@ import Footer from "./ui/Footer";
 import { Routes, Route } from "react-router-dom";
 import AboutUs from "./Pages/AboutUs";
 import Partner from "./Pages/Partner";
+import BecomeAMember from "./components/BecomeAMember/BecomeAMember"
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/partner" element={<Partner/>} />
+        <Route path="/become-a-member" element={<BecomeAMember/>}/>
       </Routes>
       <Footer />
     </ThemeProvider>

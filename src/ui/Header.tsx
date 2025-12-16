@@ -35,7 +35,7 @@ const Header = () => {
                   to={item.to}
                   className={({ isActive }) =>
                     isActive
-                      ? "text-PRIMARY font-extrabold dark:text-white"
+                      ? "text-primary font-extrabold dark:text-white"
                       : "dark:text-slate-300  text-[#333] font-bold"
                   }
                 >

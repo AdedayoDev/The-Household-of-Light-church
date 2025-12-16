@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
-
+import { NavLink } from "react-router";
 
 // --------------------
 // TYPES
@@ -103,9 +103,9 @@ const DiscipleshipStructure = () => {
         ))}
       </div>
       <div className="flex items-center justify-center py-12">
-        <Button variant="church" >
-          Become a member
-        </Button>
+        <NavLink to="/become-a-member">
+          <Button variant="church">Become a member</Button>
+        </NavLink>
       </div>
     </section>
   );

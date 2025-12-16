@@ -21,25 +21,28 @@ export const CheckBox = ({ value }: ValueProp) => {
   };
 
   return (
-    <div>
-      <button onClick={handleCopy} className="flex items-center justify-between">
-        <span>{value}</span>
-        {copied ? <FaCheck size={18} /> : <FaRegCopy size={18} />}
-      </button>
+    <div className="bg-white rounded-xl  ">
+      <div className="px-4 py-2 ">
+        <span className="capitalize bankname-text">Account number</span>
+        <button
+          onClick={handleCopy}
+          className="flex items-center justify-between w-full bank-text uppercase cursor-pointer"
+        >
+          <span>{value}</span>
+          {copied ? <FaCheck size={18} /> : <FaRegCopy size={18} />}
+        </button>
+      </div>
     </div>
   );
 };
 
 export const BankName = () => {
-
-  
   return (
-    <div>
-    <button>
-      <span>Bank Name</span>
-      moniepoint bank
-    </button>
-  </div>
-  )
-  
+    <div className="bg-white rounded-xl ">
+      <button className="flex flex-col items-start px-4 py-2 ">
+        <span className="capitalize bankname-text">Bank Name</span>
+        <span className="bank-text uppercase">moniepoint bank</span>
+      </button>
+    </div>
+  );
 };
