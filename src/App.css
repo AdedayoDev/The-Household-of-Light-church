@@ -109,4 +109,11 @@
   .primaryBtn {
     @apply bg-primary text-primary-foreground px-4 py-2 rounded-md transition hover:bg-primary/80;
   }
+
+  .bankname-text {
+    @apply text-black/60
+  }
+  .bank-text {
+    @apply text-black/80 font-semibold text-3xl
+  }
 }

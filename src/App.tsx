@@ -7,6 +7,7 @@ import { Routes, Route } from "react-router-dom";
 import AboutUs from "./Pages/AboutUs";
 import Partner from "./Pages/Partner";
 import BecomeAMember from "./components/BecomeAMember/BecomeAMember"
+import ContactUs from "./Pages/ContactUs";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/partner" element={<Partner/>} />
         <Route path="/become-a-member" element={<BecomeAMember/>}/>
+        <Route path="contact-us" element={<ContactUs/>}/>
       </Routes>
       <Footer />
     </ThemeProvider>

@@ -47,7 +47,7 @@ const OfflineGiving = () => {
           {/* Account name */}
           <div className="bg-white rounded-xl ">
             <button className="flex flex-col items-start px-4 py-2 ">
-              <span className="capitalize bankname-text">Acount name</span>
+              <span className="capitalize bankname-text">Account name</span>
               <span className="bank-text uppercase">the household of light</span>
             </button>
           </div>

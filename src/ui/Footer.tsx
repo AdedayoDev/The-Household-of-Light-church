@@ -169,7 +169,7 @@ const Footer = () => {
             <NavLink to="/sermons" className="capitalize">
               sermons
             </NavLink>
-            <NavLink to="/give" className="capitalize">
+            <NavLink to="/partner" className="capitalize">
               give
             </NavLink>
           </div>
