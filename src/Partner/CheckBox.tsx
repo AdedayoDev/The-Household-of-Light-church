@@ -15,7 +15,7 @@ export const CheckBox = ({ value }: ValueProp) => {
       setCopied(true);
 
       setTimeout(() => setCopied(false), 2000);
-    } catch (error) {
+    } catch {
       console.error("Failed to copy");
     }
   };

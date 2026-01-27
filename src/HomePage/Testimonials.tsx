@@ -1,5 +1,4 @@
-
-
+import React from "react";
 import { motion, type Variants } from "framer-motion";
 import {
   Carousel,
@@ -121,14 +120,17 @@ const profileVariants: Variants = {
 
 const Testimonials = () => {
   return (
-    <section className="w-full pb-60">
+    <section className="relative w-full pb-60 overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 bg-linear-to-b from-transparent via-purple-50/50 to-transparent dark:via-purple-900/20" />
+      
       {/* Header */}
       <motion.div
-        className="w-10/12 mx-auto space-y-5"
+        className="relative z-10 w-10/12 mx-auto space-y-5"
         variants={sectionVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ amount: 0.3 }} // 👈 replay on scroll
+        viewport={{ amount: 0.3, once: false }}
       >
         <motion.h2
           variants={headerItemVariants}
@@ -150,12 +152,17 @@ const Testimonials = () => {
 
       {/* Carousel */}
       <motion.div
-        className="w-9/12 mx-auto py-16"
+        className="relative z-10 w-9/12 mx-auto py-16"
         variants={sectionVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ amount: 0.25 }} // 👈 re-triggers
+        viewport={{ amount: 0.25, once: false }}
       >
+        <motion.div
+          className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-3xl p-10 shadow-2xl"
+          whileHover={{ scale: 1.02 }}
+          transition={{ type: "spring", stiffness: 200 }}
+        >
         <Carousel>
           <CarouselContent>
             {Items.map((item) => (
@@ -197,9 +204,28 @@ const Testimonials = () => {
           <CarouselPrevious />
           <CarouselNext />
         </Carousel>
+        </motion.div>
       </motion.div>
     </section>
   );
 };
 
 export default Testimonials;
+
+/**
+ * Local fallback declarations to satisfy TypeScript in environments
+ * where @types/react or the automatic 'react/jsx-runtime' types are not available.
+ * Remove these once @types/react is installed or your tsconfig's jsx/runtime is configured.
+ */
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      [elemName: string]: any;
+    }
+  }
+}
+declare module "react/jsx-runtime" {
+  export function jsx(type: any, props?: any, key?: any): any;
+  export function jsxs(type: any, props?: any, key?: any): any;
+  export function jsxDEV(type: any, props?: any, key?: any): any;
+}

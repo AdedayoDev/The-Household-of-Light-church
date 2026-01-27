@@ -96,13 +96,28 @@ const buttonHover = {
 
 const UpcomingPrograms = () => {
   return (
-    <section className="w-full py-20">
+    <section className="relative w-full py-20 overflow-hidden">
+      {/* Animated Background */}
       <motion.div
-        className="flex items-center justify-between gap-12 w-10/12 mx-auto"
+        className="absolute inset-0 bg-linear-to-r from-purple-100 via-pink-100 to-blue-100 dark:from-purple-900/30 dark:via-pink-900/30 dark:to-blue-900/30"
+        animate={{
+          backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+        }}
+        transition={{
+          duration: 15,
+          repeat: Infinity,
+        }}
+        style={{
+          backgroundSize: '200% 200%',
+        }}
+      />
+      
+      <motion.div
+        className="relative z-10 flex items-center justify-between gap-12 w-10/12 mx-auto"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ amount: 0.3 }} // 👈 replay on scroll in/out
+        viewport={{ amount: 0.3, once: false }}
       >
         {/* Text Content */}
         <motion.div
@@ -133,7 +148,7 @@ const UpcomingPrograms = () => {
             whileHover={buttonHover}
             whileTap={{ scale: 0.96 }}
           >
-            <Button variant="church" className="px-8 py-6 text-lg">
+            <Button variant="church" className="px-10 py-7 text-lg font-bold bg-linear-to-r from-purple-600 to-pink-600 text-white shadow-2xl hover:shadow-purple-500/50 transition-all duration-300">
               Register Now
             </Button>
           </motion.div>
@@ -142,11 +157,25 @@ const UpcomingPrograms = () => {
         {/* Image */}
         <motion.div
           variants={imageVariants}
+          className="relative"
+          whileHover={{ scale: 1.08, rotate: 3 }}
+          transition={{ type: "spring", stiffness: 200 }}
         >
+          <motion.div
+            className="absolute -inset-6 bg-linear-to-r from-purple-400 to-pink-500 rounded-full blur-3xl opacity-40"
+            animate={{
+              scale: [1, 1.2, 1],
+              rotate: [0, 180, 360],
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+            }}
+          />
           <img
             src="upcoming-event.svg"
             alt="Upcoming Event"
-            className="w-[358px] object-contain"
+            className="relative w-[358px] object-contain drop-shadow-2xl"
           />
         </motion.div>
       </motion.div>

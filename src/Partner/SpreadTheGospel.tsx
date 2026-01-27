@@ -1,22 +1,14 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import OfflineGiving from "./OfflineGiving";
 import OnlineGiving from "./OnlineGiving";
 
 const SpreadTheGospel = () => {
-  const [tab, setTab] = useState("offline");
-
-  // Read tab from URL on first load
-  useEffect(() => {
+  const [tab, setTab] = useState(() => {
     const params = new URLSearchParams(window.location.search);
     const urlTab = params.get("tab");
-
-    if (urlTab === "online" || urlTab === "offline") {
-      setTab(urlTab);
-    } else {
-      setTab("offline"); // default
-    }
-  }, []);
+    return (urlTab === "online" || urlTab === "offline") ? urlTab : "offline";
+  });
 
   // Update URL when tab changes
   const handleTabChange = (value: string) => {

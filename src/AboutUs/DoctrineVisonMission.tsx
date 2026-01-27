@@ -123,7 +123,7 @@ const DoctrineVisionMission: FC = () => {
 
             <div className="relative p-10 flex justify-center items-center">
               <div className="bg-white/90 backdrop-blur-md shadow-lg rounded-2xl p-8 flex flex-col gap-5 text-center">
-                <h2 className="uppercase text-3xl font-bold bg-gradient-to-r from-black to-primary bg-clip-text text-transparent">
+                <h2 className="uppercase text-3xl font-bold bg-linear-to-r from-black to-primary bg-clip-text text-transparent">
                   our vision
                 </h2>
                 <p className="text-gray-700 leading-relaxed text-lg text-justify">
