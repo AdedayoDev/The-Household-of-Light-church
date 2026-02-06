@@ -1,144 +1,105 @@
-import type { FC } from "react";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
-
-// --------------------
-// ANIMATION VARIANTS
-// --------------------
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number = 1) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: i * 0.15,
-      duration: 0.6,
-      ease: "easeOut" as const,
-    },
-  }),
-};
-
-const staggerContainer = {
-  hidden: {},
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
   visible: {
-    transition: {
-      staggerChildren: 0.15,
-    },
+    opacity: 1,
+    transition: { staggerChildren: 0.12, delayChildren: 0.1 },
   },
 };
 
-// --------------------
-// COMPONENT
-// --------------------
-const DoctrineVisionMission: FC = () => {
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { type: "spring", stiffness: 100, damping: 16 },
+  },
+};
+
+const DoctrineVisonMission = () => {
+  const sections = [
+    {
+      title: "Our Mission",
+      icon: "🎯",
+      content:
+        "To raise men in the knowledge of Christ, leading them to a full understanding of God's completed work in Him, and helping them mature into the full stature and likeness of Jesus Christ in all things.",
+    },
+    {
+      title: "Our Vision",
+      icon: "👁️",
+      content:
+        "A community of believers transformed by God's Word, living in the reality of their identity in Christ, manifesting His love, and impacting their spheres of influence with the Gospel.",
+    },
+    {
+      title: "Our Doctrine",
+      icon: "📖",
+      content:
+        "We believe in the authority and sufficiency of Scripture, the centrality of Christ, justification by faith, the power of the Holy Spirit, and the transforming grace of God that changes lives.",
+    },
+  ];
+
   return (
-    <section className="w-full py-20 bg-gray-50">
-      <div className="w-10/12 mx-auto space-y-16">
-        {/* ---------------- Top Doctrine Section ---------------- */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          variants={fadeUp}
-          className="relative rounded-2xl overflow-hidden"
-        >
-          {/* Background */}
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: 'url("/code-of-doctrine.svg")' }}
-          />
-
-          {/* Content */}
-          <div className="relative p-10 flex justify-end items-end">
-            <div className="bg-white/90 backdrop-blur-md shadow-lg rounded-2xl p-8 w-full md:w-7/12 space-y-10">
-              <h2 className="uppercase text-4xl font-bold text-center bg-linear-to-r from-black to-primary bg-clip-text text-transparent tracking-wide">
-                our code of doctrine
-              </h2>
-
-              <motion.ul
-                variants={staggerContainer}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                className="list-disc flex flex-col gap-4 pl-6 text-lg text-gray-700 leading-relaxed"
-              >
-                {[
-                  "We believe Jesus Christ is the center of God’s redemptive plan. His death, burial, and resurrection provide salvation and eternal life for all who believe.",
-                  "We uphold the authority of Scripture as God’s inspired Word and final guide for faith and living.",
-                  "We believe in the ministry of the Holy Spirit who empowers believers to live victorious Christian lives.",
-                  "We believe in the unity of the Body of Christ and our call to love, serve, and build one another in the faith.",
-                ].map((item, index) => (
-                  <motion.li key={index} variants={fadeUp}>
-                    {item}
-                  </motion.li>
-                ))}
-              </motion.ul>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* ---------------- Mission + Vision ---------------- */}
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-40px" }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-10"
-        >
-          {/* Mission */}
-          <motion.div
-            variants={fadeUp}
-            className="relative rounded-2xl overflow-hidden"
-          >
-            <div
-              className="absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: 'url("/code-of-doctrine.svg")' }}
-            />
-
-            <div className="relative p-10 flex justify-center items-center">
-              <div className="bg-white/90 backdrop-blur-md shadow-lg rounded-2xl p-8 flex flex-col gap-5 text-center">
-                <h2 className="uppercase text-3xl font-bold bg-linear-to-r from-black to-primary bg-clip-text text-transparent">
-                  our mission
-                </h2>
-                <p className="text-gray-700 leading-relaxed text-lg text-justify">
-                  We are devoted to raising men by God’s Word and His Spirit.
-                  Through sound teaching, genuine discipleship, and the Spirit’s
-                  transforming power, we help believers grow in faith, character,
-                  and purpose—equipping them to live out Christ boldly in everyday
-                  life.
-                </p>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Vision */}
-          <motion.div
-            variants={fadeUp}
-            className="relative rounded-2xl overflow-hidden"
-          >
-            <div
-              className="absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: 'url("/code-of-doctrine.svg")' }}
-            />
-
-            <div className="relative p-10 flex justify-center items-center">
-              <div className="bg-white/90 backdrop-blur-md shadow-lg rounded-2xl p-8 flex flex-col gap-5 text-center">
-                <h2 className="uppercase text-3xl font-bold bg-linear-to-r from-black to-primary bg-clip-text text-transparent">
-                  our vision
-                </h2>
-                <p className="text-gray-700 leading-relaxed text-lg text-justify">
-                  Our vision is to raise mature, Spirit-filled believers who
-                  reveal Christ to the world—walking in wisdom, love, power, and
-                  purposeful kingdom living that transforms families,
-                  communities, and nations.
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        </motion.div>
+    <section className="relative w-full py-16 md:py-24 overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 -z-20">
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-primary/10 dark:bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/3 left-0 w-96 h-96 bg-accent/10 dark:bg-accent/5 rounded-full blur-3xl" />
       </div>
+
+      <motion.div
+        className="container-responsive flex flex-col items-center justify-center space-y-12"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.3 }}
+      >
+        {/* Header */}
+        <motion.div variants={itemVariants} className="text-center space-y-4 max-w-2xl">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 dark:bg-accent/10 rounded-full border border-primary/20 dark:border-accent/20">
+            <span className="w-2 h-2 bg-primary dark:bg-accent rounded-full" />
+            <span className="text-xs font-semibold text-primary dark:text-accent uppercase">
+              Foundation
+            </span>
+          </div>
+          <h2 className="heading-2 text-foreground dark:text-white">
+            Mission, Vision & Doctrine
+          </h2>
+        </motion.div>
+
+        {/* Cards Grid */}
+        <motion.div
+          variants={containerVariants}
+          className="w-full grid grid-cols-1 md:grid-cols-3 gap-6"
+        >
+          {sections.map((section) => (
+            <motion.div
+              key={section.title}
+              variants={itemVariants}
+              className="group relative"
+            >
+              <div className="h-full p-8 rounded-xl border border-border dark:border-primary/20 bg-background dark:bg-muted hover:border-primary dark:hover:border-accent shadow-sm hover:shadow-lg dark:hover:shadow-primary/10 transition-all duration-300 space-y-4">
+                {/* Icon */}
+                <div className="text-5xl group-hover:scale-110 transition-transform">
+                  {section.icon}
+                </div>
+
+                {/* Title */}
+                <h3 className="heading-4 text-foreground dark:text-accent">
+                  {section.title}
+                </h3>
+
+                {/* Content */}
+                <p className="body-base text-foreground/70 dark:text-accent/80 leading-relaxed">
+                  {section.content}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
 
-export default DoctrineVisionMission;
+export default DoctrineVisonMission;

@@ -1,86 +1,132 @@
-interface ContactInfoItem {
-  id: number;
-  icon: string;
-  heading: string;
-  subText: string;
-  address: string;
-  type: "whatsapp" | "email" | "address" | "phone";
-}
-
-const infoData: ContactInfoItem[] = [
-  {
-    id: 1,
-    icon: "/whatsappLive.svg",
-    heading: "WhatsApp Live Chat",
-    subText: "Speak to us quickly",
-    address: "https://wa.me/2348136621545",
-    type: "whatsapp",
-  },
-  {
-    id: 2,
-    icon: "/liveTicket.svg",
-    heading: "Submit Ticket",
-    subText: "Reach us via our email",
-    address: "mailto:thehouseholdoflight@gmail.com",
-    type: "email",
-  },
-  {
-    id: 3,
-    icon: "/address.svg",
-    heading: "Our Address",
-    subText: "Visit us at our address",
-    address:
-      "https://maps.google.com/?q=Hall 1, Kings Primary School, Aduin Area, Ogbomoso",
-    type: "address",
-  },
-  {
-    id: 4,
-    icon: "/call.svg",
-    heading: "Give Us A Call",
-    subText: "Talk to us over the phone",
-    address: "tel:+2348136621545",
-    type: "phone",
-  },
-];
+import { motion, type Variants } from "framer-motion";
+import { Mail, MapPin, Phone, Clock, MessageSquare } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const ContactInfo = () => {
-  return (
-    <section className="w-full  ">
-      <div className="bg-[#FADEFF] w-[519px] py-7 rounded-xl"> 
-        <div className="w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-          {infoData.map((item) => (
-            <a
-              key={item.id}
-              href={item.address}
-              target={item.type === "address" ? "_blank" : undefined}
-              rel={item.type === "address" ? "noopener noreferrer" : undefined}
-              className="
-              flex flex-col items-start gap-4 p-6 bg-white rounded-2xl
-              shadow-sm hover:shadow-md transition-all duration-300
-              hover:-translate-y-1
-            "
-            >
-              {/* Icon */}
-              <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-[#9b28b0]/10">
-                <img src={item.icon} alt={item.heading} className="w-6 h-6" />
-              </div>
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.12, delayChildren: 0.1 },
+    },
+  };
 
-              {/* Text */}
-              <div className="flex flex-col gap-2">
-                <h3 className="text-lg font-semibold text-gray-900">
-                  {item.heading}
-                </h3>
-                <p className="text-sm text-gray-600">{item.subText}</p>
-                <span className="text-sm font-medium text-[#9b28b0] break-all">
-                  {item.type === "address"
-                    ? "View on map"
-                    : item.address.replace(/(mailto:|tel:|https:\/\/)/g, "")}
-                </span>
-              </div>
-            </a>
-          ))}
-        </div>
-      </div>
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5 },
+    },
+  };
+
+  const contacts = [
+    {
+      icon: Phone,
+      title: "Call Us",
+      details: ["Main: (555) 123-4567", "Prayer Line: (555) 123-4568"],
+      color: "from-blue-500 to-cyan-500",
+    },
+    {
+      icon: Mail,
+      title: "Email Us",
+      details: ["General: hello@household-of-light.com", "Prayer: prayer@household-of-light.com"],
+      color: "from-purple-500 to-pink-500",
+    },
+    {
+      icon: MapPin,
+      title: "Visit Us",
+      details: ["123 Grace Street", "Your City, ST 12345"],
+      color: "from-green-500 to-emerald-500",
+    },
+    {
+      icon: Clock,
+      title: "Service Times",
+      details: ["Sunday: 9:00 AM & 11:00 AM", "Wednesday: 7:00 PM"],
+      color: "from-orange-500 to-amber-500",
+    },
+  ];
+
+  return (
+    <section className="relative w-full py-16 md:py-24 overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 -z-20 bg-muted dark:bg-slate-900/50" />
+
+      <motion.div
+        className="container-responsive flex flex-col items-center justify-center space-y-12"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.3 }}
+      >
+        {/* Header */}
+        <motion.div variants={itemVariants} className="text-center space-y-4 max-w-2xl">
+          <h2 className="heading-2 text-foreground dark:text-white">
+            Contact Information
+          </h2>
+          <p className="body-lg text-foreground/70 dark:text-accent/80">
+            Reach out to us through any of these channels. We're always happy to connect with you.
+          </p>
+        </motion.div>
+
+        {/* Contact Cards */}
+        <motion.div variants={containerVariants} className="w-full grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          {contacts.map((contact) => {
+            const Icon = contact.icon;
+            return (
+              <motion.div
+                key={contact.title}
+                variants={itemVariants}
+                className="group p-6 md:p-8 rounded-xl border border-border dark:border-primary/20 bg-background dark:bg-slate-900/50 hover:shadow-lg dark:hover:shadow-primary/10 transition-all duration-300"
+              >
+                <div className="space-y-4">
+                  {/* Icon */}
+                  <div className={`p-4 bg-gradient-to-br ${contact.color} w-fit rounded-lg shadow-lg group-hover:scale-110 transition-transform`}>
+                    <Icon className="w-6 h-6 text-white" />
+                  </div>
+
+                  {/* Content */}
+                  <div className="space-y-2">
+                    <h3 className="heading-4 text-foreground dark:text-white">
+                      {contact.title}
+                    </h3>
+                    {contact.details.map((detail, i) => (
+                      <p key={i} className="body-sm text-foreground/70 dark:text-accent/80">
+                        {detail}
+                      </p>
+                    ))}
+                  </div>
+
+                  {/* Action */}
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="w-full mt-2 group/btn"
+                  >
+                    <MessageSquare className="w-4 h-4 mr-2" />
+                    Reach Out
+                  </Button>
+                </div>
+              </motion.div>
+            );
+          })}
+        </motion.div>
+
+        {/* Map Placeholder */}
+        <motion.div
+          variants={itemVariants}
+          className="w-full h-80 rounded-xl border border-border dark:border-primary/20 bg-gradient-to-br from-primary/10 to-accent/10 dark:from-primary/5 dark:to-accent/5 overflow-hidden"
+        >
+          <iframe
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            loading="lazy"
+            allowFullScreen
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.2219901290355!2d-74.00601692346036!3d40.71284097138067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a27aad927a7%3A0x56b26d40af7b1d10!2sChurch!5e0!3m2!1sen!2sus!4v1234567890"
+          />
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

@@ -1,21 +1,27 @@
-import ContactInfo from "./ContactInfo";
+import { motion, type Variants } from "framer-motion";
+import ContactUsHero from "./ContactUsHero";
 import FormSection from "./FormSection";
+import ContactInfo from "./ContactInfo";
 
 const ContactUsAndForm = () => {
-  return (
-    <section className="w-full pb-72 pt-12 ">
-      <div className="mx-auto w-10/12 flex items-center justify-between">
-        {/* Detailed Address */}
-        <div className="w-1/2">
-          <ContactInfo />
-        </div>
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1 },
+    },
+  };
 
-        {/* Contact us Form */}
-        <div className="w-1/2">
-          <FormSection />
-        </div>
-      </div>
-    </section>
+  return (
+    <motion.div
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
+      <ContactUsHero />
+      <FormSection />
+      <ContactInfo />
+    </motion.div>
   );
 };
 

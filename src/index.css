@@ -1,51 +1,158 @@
 @import "tailwindcss";
 
-/* Smooth scrolling */
+/* ============================================================================
+   SMOOTH SCROLLING & CUSTOM SCROLLBAR
+============================================================================ */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar styling with purple accent */
 ::-webkit-scrollbar {
   width: 12px;
+  height: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-gray-100 dark:bg-gray-900;
+  @apply bg-gray-100 dark:bg-slate-900;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-linear-to-b from-purple-500 to-blue-500 rounded-full;
+  @apply bg-linear-to-b from-purple-400 via-purple-500 to-purple-600 rounded-full transition-all;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply from-purple-600 to-blue-600;
+  @apply from-purple-500 via-purple-600 to-purple-700;
 }
 
-/* Global animations */
+/* Firefox scrollbar */
+* {
+  scrollbar-color: rgb(168, 85, 247) rgb(241, 245, 249);
+  scrollbar-width: thin;
+}
+
+.dark * {
+  scrollbar-color: rgb(168, 85, 247) rgb(15, 23, 42);
+}
+
+/* ============================================================================
+   GLOBAL ANIMATIONS
+============================================================================ */
+
+/* Float animation for floating elements */
 @keyframes float {
   0%, 100% {
-    transform: translateY(0);
+    transform: translateY(0px);
   }
   50% {
     transform: translateY(-20px);
   }
 }
 
+/* Pulse glow animation for emphasis */
 @keyframes pulse-glow {
   0%, 100% {
     opacity: 1;
   }
   50% {
-    opacity: 0.5;
+    opacity: 0.7;
   }
 }
 
+/* Subtle glow effect for dark mode */
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(167, 139, 250, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(167, 139, 250, 0.5);
+  }
+}
+
+/* Slide in from left */
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide in from right */
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Fade in up */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Subtle shimmer effect */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* ============================================================================
+   ANIMATION UTILITY CLASSES
+============================================================================ */
 .animate-float {
   animation: float 3s ease-in-out infinite;
 }
 
 .animate-pulse-glow {
   animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.5s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.5s ease-out;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* ============================================================================
+   DARK MODE GRADIENTS
+============================================================================ */
+.dark {
+  color-scheme: dark;
 }
 

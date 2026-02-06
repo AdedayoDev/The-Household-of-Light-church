@@ -1,15 +1,21 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-/* ------------------------------
-   Dark mode selector
--------------------------------- */
+/* ============================================================================
+   TYPOGRAPHY IMPORTS - Google Fonts
+   Playfair Display: Premium serif for headings
+   Inter: Modern sans-serif for body text
+============================================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* ============================================================================
+   DARK MODE SELECTOR
+============================================================================ */
 @custom-variant dark (&:is(.dark *));
 
-/* ------------------------------
-   Tailwind ↔ CSS variable mapping
-   (shadcn REQUIRED)
--------------------------------- */
+/* ============================================================================
+   TAILWIND ↔ CSS VARIABLE MAPPING (shadcn REQUIRED)
+============================================================================ */
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -37,83 +43,217 @@
   --color-ring: var(--ring);
 }
 
-/* ------------------------------
-   LIGHT THEME (YOUR BRAND COLORS)
--------------------------------- */
+/* ============================================================================
+   LIGHT THEME - Purple-based Design System
+   Primary: Deep Purple (#7c3aed)
+   Shades: Lighter purples for depth and contrast
+============================================================================ */
 :root {
   --radius: 0.625rem;
 
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  /* Light Theme Background & Text */
+  --background: #ffffff;
+  --foreground: #0f0f1e;
 
-  /* ✅ BRAND COLORS */
-  --primary: #9b28b0;
+  /* PRIMARY - Deep Purple */
+  --primary: #7c3aed;
   --primary-foreground: #ffffff;
 
-  --secondary: #e86f00;
+  /* SECONDARY - Light Purple variant */
+  --secondary: #a78bfa;
   --secondary-foreground: #ffffff;
 
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
+  /* ACCENT - Purple-pink for highlights */
+  --accent: #c084fc;
+  --accent-foreground: #ffffff;
 
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  /* MUTED - Light purple backgrounds */
+  --muted: #f3e8ff;
+  --muted-foreground: #6b7280;
 
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  /* BORDERS & INPUTS */
+  --border: #e9d5ff;
+  --input: #f5f3ff;
+  --ring: #7c3aed;
+
+  /* DESTRUCTIVE */
+  --destructive: #dc2626;
 }
 
-/* ------------------------------
-   DARK THEME
--------------------------------- */
+/* ============================================================================
+   DARK THEME - Sophisticated Dark Purple Design
+   Background: Deep dark with purple undertones
+   Primary: Bright purple for visibility and brand consistency
+   Approach: Unique, premium feel with purple glows and sophisticated contrast
+============================================================================ */
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
+  /* Dark Theme Background & Text */
+  --background: #0a0a14;
+  --foreground: #f5f3ff;
 
-  --primary: #c94be3;
-  --primary-foreground: #ffffff;
+  /* PRIMARY - Bright Purple for dark mode */
+  --primary: #a78bfa;
+  --primary-foreground: #0a0a14;
 
-  --secondary: #ff9a3c;
-  --secondary-foreground: #000000;
+  /* SECONDARY - Purple-violet accent */
+  --secondary: #c084fc;
+  --secondary-foreground: #0a0a14;
 
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
+  /* ACCENT - Lighter purple with glow effect */
+  --accent: #ddd6fe;
+  --accent-foreground: #0a0a14;
 
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
+  /* MUTED - Dark purple backgrounds */
+  --muted: #1f1f3f;
+  --muted-foreground: #a1a1b8;
 
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
+  /* BORDERS & INPUTS - Subtle purple tints */
+  --border: #2a2650;
+  --input: #141428;
+  --ring: #a78bfa;
+
+  /* DESTRUCTIVE */
+  --destructive: #ef4444;
 }
 
-/* ------------------------------
+/* ============================================================================
    BASE STYLES
--------------------------------- */
+============================================================================ */
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
   }
 }
 
-/* ------------------------------
-   UTILITIES (SAFE)
--------------------------------- */
-@layer utilities {
-  .primaryBtn {
-    @apply bg-primary text-primary-foreground px-4 py-2 rounded-md transition hover:bg-primary/80;
+/* ============================================================================
+   TYPOGRAPHY UTILITIES
+============================================================================ */
+@layer components {
+  /* Heading Typography */
+  .heading-1 {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold leading-tight;
+    font-family: 'Playfair Display', serif;
   }
 
-  .bankname-text {
-    @apply text-black/60
+  .heading-2 {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold leading-tight;
+    font-family: 'Playfair Display', serif;
   }
-  .bank-text {
-    @apply text-black/80 font-semibold text-3xl
+
+  .heading-3 {
+    @apply text-2xl md:text-3xl font-bold leading-snug;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .heading-4 {
+    @apply text-xl md:text-2xl font-semibold leading-snug;
+    font-family: 'Playfair Display', serif;
+  }
+
+  /* Body Typography */
+  .body-lg {
+    @apply text-lg leading-relaxed font-normal;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .body-base {
+    @apply text-base leading-relaxed font-normal;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .body-sm {
+    @apply text-sm leading-relaxed font-normal;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Button Variants */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-primary/90 hover:shadow-lg active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-secondary/90 hover:shadow-lg active:scale-95;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary text-primary px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-primary/10 active:scale-95;
+  }
+
+  /* Card Component */
+  .card {
+    @apply bg-background border border-border rounded-xl p-6 shadow-sm transition-all duration-300 hover:shadow-md;
+  }
+
+  .card-dark {
+    @apply dark:bg-muted;
+  }
+}
+
+/* ============================================================================
+   DARK MODE ENHANCEMENTS - Glowing Effects
+============================================================================ */
+@layer utilities {
+  .glow-primary {
+    @apply shadow-lg shadow-primary/20;
+  }
+
+  .glow-secondary {
+    @apply shadow-lg shadow-secondary/20;
+  }
+
+  .border-glow {
+    @apply border border-primary/30;
+  }
+
+  .dark .border-glow {
+    @apply border-primary/50;
+  }
+
+  /* Dark mode specific card styling */
+  .dark .card {
+    @apply bg-muted border border-primary/50;
+  }
+}
+
+/* ============================================================================
+   UTILITIES
+============================================================================ */
+@layer utilities {
+  /* Text utilities */
+  .text-gradient {
+    @apply bg-linear-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+
+  .text-gradient-dark {
+    @apply dark:from-accent dark:to-secondary;
+  }
+
+  /* Container utilities */
+  .container-responsive {
+    @apply w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-8;
+  }
+
+  /* Transition utilities */
+  .transition-smooth {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  /* Bank/Finance specific utilities */
+  .bank-heading {
+    @apply text-black dark:text-white font-semibold text-3xl;
+  }
+
+  .bank-subtitle {
+    @apply text-black/60 dark:text-white/70;
   }
 }

@@ -1,151 +1,184 @@
-import React from "react";
+import { useMemo } from "react";
 import { motion, type Variants } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { FaYoutube } from "react-icons/fa";
-
-/* ---------------------------------
-   Animation Variants (Typed)
----------------------------------- */
+import { Play } from "lucide-react";
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { delayChildren: 0.3, staggerChildren: 0.2 },
+    transition: { delayChildren: 0.2, staggerChildren: 0.15 },
   },
 };
 
 const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { type: "spring", stiffness: 90, damping: 18 },
-  },
-};
-
-const buttonVariants: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { type: "spring", stiffness: 80, damping: 15, delay: 0.4 },
+    transition: { type: "spring", stiffness: 80, damping: 18 },
   },
 };
 
-const buttonHover = {
-  scale: 1.05,
-  y: -3,
-  boxShadow: "0px 10px 30px rgba(0,0,0,0.25)",
-  transition: { type: "spring", stiffness: 300 },
-} as const;
-
-/* ---------------------------------
-   Hero Component
----------------------------------- */
+const buttonVariants: Variants = {
+  hidden: { opacity: 0, scale: 0.9 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { type: "spring", stiffness: 100, damping: 15, delay: 0.5 },
+  },
+};
 
 const Hero = () => {
-  // Generate random values for particles only once using useMemo
-  const particles = React.useMemo(
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const particles = useMemo(
     () =>
-      [...Array(20)].map(() => {
-        const randomX = Math.random() * 100 - 50;
-        const randomDuration = Math.random() * 5 + 5;
-        const randomDelay = Math.random() * 5;
-        const randomLeft = Math.random() * 100;
-        const randomTop = Math.random() * 100;
-        return {
-          randomX,
-          randomDuration,
-          randomDelay,
-          randomLeft,
-          randomTop,
-        };
-      }),
+      [...Array(25)].map(() => ({
+        x: Math.random() * 100,
+        y: Math.random() * 100,
+        duration: Math.random() * 5 + 5,
+        delay: Math.random() * 2,
+        size: Math.random() * 2 + 1,
+      })),
     []
   );
 
   return (
-    <section className="relative h-[90vh] w-full flex items-center justify-center overflow-hidden">
+    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Animated Gradient Background */}
-      <motion.div
-        className="absolute inset-0 bg-linear-to-br from-purple-900 via-blue-900 to-indigo-900"
-        animate={{ backgroundPosition: ["0% 0%", "100% 100%"] }}
-        transition={{ duration: 20, repeat: Infinity, repeatType: "reverse" }}
-        style={{ backgroundSize: "200% 200%" }}
-      />
+      <div className="absolute inset-0 -z-20">
+        <div className="absolute inset-0 bg-linear-to-br from-primary/20 via-background to-accent/10 dark:from-slate-900 dark:via-purple-900/30 dark:to-slate-950" />
+        <motion.div
+          className="absolute inset-0 bg-linear-to-r from-primary/0 via-primary/5 to-accent/0 dark:via-accent/10"
+          animate={{ backgroundPosition: ["0% 0%", "100% 100%"] }}
+          transition={{ duration: 20, repeat: Infinity, repeatType: "reverse" }}
+          style={{ backgroundSize: "200% 200%" }}
+        />
+      </div>
 
-      {/* Floating Particles Effect */}
-      <div className="absolute inset-0 opacity-30">
+      {/* Floating Particles */}
+      <div className="absolute inset-0 -z-10 opacity-20 dark:opacity-30">
         {particles.map((particle, i) => (
           <motion.div
             key={i}
-            className="absolute w-2 h-2 bg-white rounded-full"
+            className="absolute rounded-full bg-linear-to-br from-primary to-accent"
             animate={{
-              y: [0, -100, 0],
-              x: [0, particle.randomX, 0],
-              opacity: [0, 1, 0],
+              y: [particle.y, particle.y - 100, particle.y],
+              x: [particle.x, particle.x + 50, particle.x],
+              opacity: [0, 0.6, 0],
             }}
             transition={{
-              duration: particle.randomDuration,
+              duration: particle.duration,
               repeat: Infinity,
-              delay: particle.randomDelay,
+              delay: particle.delay,
             }}
-            style={{ left: `${particle.randomLeft}%`, top: `${particle.randomTop}%` }}
+            style={{
+              width: particle.size,
+              height: particle.size,
+              left: `${particle.x}%`,
+              top: `${particle.y}%`,
+            }}
           />
         ))}
       </div>
 
+      {/* Main Content */}
       <motion.div
-        className="relative z-10 w-10/12 mx-auto flex flex-col items-center justify-center space-y-6 py-20"
+        className="container-responsive relative z-10 flex flex-col items-center justify-center space-y-8 text-center py-12 md:py-20"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        <motion.h3
-          variants={itemVariants}
-          className="capitalize font-semibold text-5xl text-center text-white drop-shadow-2xl"
-        >
-          welcome to
-        </motion.h3>
+        {/* Badge */}
+        <motion.div variants={itemVariants}>
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 dark:bg-accent/10 rounded-full border border-primary/20 dark:border-accent/20">
+            <div className="w-2 h-2 bg-primary dark:bg-accent rounded-full animate-pulse" />
+            <span className="text-sm font-semibold text-primary dark:text-accent">
+              Welcome to our community
+            </span>
+          </div>
+        </motion.div>
 
-        <motion.h2
-          variants={itemVariants}
-          className="uppercase text-6xl font-bold text-center text-transparent bg-clip-text bg-linear-to-r from-white via-blue-200 to-purple-200 drop-shadow-2xl"
-        >
-          the household of light church
-        </motion.h2>
+        {/* Main Heading */}
+        <motion.div variants={itemVariants} className="space-y-4 max-w-4xl">
+          <h1 className="heading-1 text-foreground dark:text-white">
+            The Household of Light Church
+          </h1>
+          <p className="heading-4 text-foreground/70 dark:text-accent/90 font-light">
+            Growing in Christ, Sharing His Love
+          </p>
+        </motion.div>
 
+        {/* Description */}
         <motion.p
           variants={itemVariants}
-          className="text-center text-white/90 max-w-3xl text-lg leading-relaxed drop-shadow-lg"
+          className="body-lg max-w-3xl text-foreground/80 dark:text-accent/80 leading-relaxed"
         >
-          We are a family with the mission to raise men in the knowledge of
-          Christ, leading them to a full understanding of God’s completed work
-          in Him, and helping them mature into the full stature and likeness of
-          Jesus Christ in all things.
+          We are a faith-filled community dedicated to raising men in the knowledge of
+          Christ. Our mission is to lead people to a full understanding of God's completed
+          work and help them mature into the full stature and likeness of Jesus Christ.
         </motion.p>
 
-        {/* Buttons */}
-        <motion.div variants={buttonVariants} className="flex flex-col sm:flex-row gap-5 pt-6">
-          <motion.div whileHover={buttonHover} whileTap={{ scale: 0.97 }}>
-            <Button className="bg-white text-black flex items-center gap-2 px-8 py-7 text-lg font-semibold shadow-2xl hover:shadow-white/50 transition-shadow duration-300">
-              Watch Live
-              <motion.div animate={{ scale: [1, 1.2, 1] }} transition={{ duration: 1.5, repeat: Infinity }}>
-                <FaYoutube className="text-red-500 text-2xl" />
-              </motion.div>
-            </Button>
-          </motion.div>
-
-          <motion.div whileHover={buttonHover} whileTap={{ scale: 0.97 }}>
-            <Button
-              variant="outline"
-              className="border-2 border-white text-white bg-white/10 backdrop-blur-sm px-8 py-7 text-lg font-semibold hover:bg-white hover:text-black transition-all duration-300 shadow-lg"
-            >
-              Plan a Visit
-            </Button>
-          </motion.div>
+        {/* CTA Buttons */}
+        <motion.div
+          variants={buttonVariants}
+          className="flex flex-col sm:flex-row gap-4 pt-8"
+        >
+          <Button className="btn-primary gap-2 h-12 px-8 text-base group">
+            <Play className="w-5 h-5 group-hover:scale-110 transition-transform" />
+            Watch Live Service
+          </Button>
+          <Button
+            variant="outline"
+            className="btn-outline h-12 px-8 text-base border-primary dark:border-accent"
+          >
+            Plan a Visit
+          </Button>
         </motion.div>
+
+        {/* Stats/Quick Info */}
+        <motion.div
+          variants={itemVariants}
+          className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-12 w-full max-w-2xl"
+        >
+          {[
+            { label: "Sundays", value: "9:00 AM" },
+            { label: "Tuesdays", value: "5:00 PM" },
+            { label: "Fridays", value: "5:00 PM" },
+          ].map((item) => (
+            <div
+              key={item.label}
+              className="p-4 bg-muted dark:bg-primary/10 rounded-lg border border-border dark:border-primary/20 hover:border-primary dark:hover:border-accent transition-colors"
+            >
+              <p className="text-sm text-muted-foreground dark:text-accent/60 font-medium">
+                {item.label}
+              </p>
+              <p className="text-lg font-semibold text-foreground dark:text-accent">
+                {item.value}
+              </p>
+            </div>
+          ))}
+        </motion.div>
+      </motion.div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20"
+        animate={{ y: [0, 10, 0] }}
+        transition={{ duration: 2, repeat: Infinity }}
+      >
+        <div className="flex flex-col items-center gap-2">
+          <span className="text-xs text-muted-foreground dark:text-accent/60 font-semibold uppercase">
+            Scroll
+          </span>
+          <div className="w-6 h-10 border-2 border-primary dark:border-accent rounded-full flex items-start justify-center p-2">
+            <motion.div
+              className="w-1 h-2 bg-primary dark:bg-accent rounded-full"
+              animate={{ y: [0, 8, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
+            />
+          </div>
+        </div>
       </motion.div>
     </section>
   );

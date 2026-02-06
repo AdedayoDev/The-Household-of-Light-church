@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { useState } from "react";
+import { ArrowRight, Heart } from "lucide-react";
 
 const PartnerHero = () => {
   const [randomValues] = useState<Array<{ duration: number; delay: number; left: number; top: number }>>(() =>
@@ -12,34 +13,34 @@ const PartnerHero = () => {
     }))
   );
 
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1, delayChildren: 0.2 },
+    },
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
+
   return (
     <section className="relative h-[90vh] w-full flex items-center justify-center overflow-hidden">
-      {/* Animated Gradient Background */}
-      <motion.div
-        className="absolute inset-0 bg-linear-to-br from-green-900 via-teal-900 to-blue-900"
-        animate={{
-          backgroundPosition: ['0% 0%', '100% 100%'],
-        }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          repeatType: 'reverse',
-        }}
-        style={{
-          backgroundSize: '200% 200%',
-        }}
-      />
-      
-      {/* Floating Money/Gift Icons Effect */}
-      <div className="absolute inset-0 opacity-20">
+      {/* Background */}
+      <div className="absolute inset-0 -z-20 bg-linear-to-br from-slate-50 via-background to-muted dark:from-slate-950 dark:via-slate-900/50 dark:to-slate-950" />
+
+      {/* Animated Particles */}
+      <div className="absolute inset-0 opacity-10 dark:opacity-20 -z-10">
         {randomValues.map((values, i) => (
           <motion.div
             key={i}
-            className="absolute text-4xl"
+            className="absolute w-2 h-2 rounded-full bg-linear-to-r from-primary to-accent"
             animate={{
-              y: [0, -150, 0],
-              rotate: [0, 360],
-              opacity: [0, 0.6, 0],
+              y: [0, -200, 0],
+              x: [0, Math.sin(i) * 100, 0],
+              opacity: [0, 0.8, 0],
             }}
             transition={{
               duration: values.duration,
@@ -50,62 +51,94 @@ const PartnerHero = () => {
               left: `${values.left}%`,
               top: `${values.top}%`,
             }}
-          >
-            💝
-          </motion.div>
+          />
         ))}
       </div>
 
+      {/* Content */}
       <motion.div
-        className="relative z-10 w-10/12 mx-auto flex flex-col items-center justify-center gap-6 text-center"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+        className="container-responsive relative z-10 flex flex-col items-center justify-center text-center space-y-8"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
       >
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.2, duration: 0.5 }}
-        >
-          <Button className="bg-white/10 backdrop-blur-md uppercase text-white border-2 border-white hover:bg-white hover:text-green-900 transition-all duration-300 px-8 py-6 text-lg font-semibold shadow-2xl">
-            give
+        {/* Badge */}
+        <motion.div variants={itemVariants}>
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 dark:bg-accent/10 rounded-full border border-primary/20 dark:border-accent/20">
+            <Heart className="w-4 h-4 text-primary dark:text-accent fill-primary dark:fill-accent" />
+            <span className="text-sm font-semibold text-primary dark:text-accent uppercase">
+              Join Us in Ministry
+            </span>
+          </div>
+        </motion.div>
+
+        {/* Heading */}
+        <motion.div variants={itemVariants} className="space-y-4 max-w-3xl">
+          <h1 className="heading-1 text-foreground dark:text-white leading-tight">
+            Partner With Us
+          </h1>
+          <p className="text-lg md:text-xl text-foreground/70 dark:text-accent/80">
+            Every contribution—whether financial, prayerful, or time-based—advances the kingdom of God and transforms
+            lives in our community and beyond.
+          </p>
+        </motion.div>
+
+        {/* CTA Buttons */}
+        <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button
+            size="lg"
+            className="group bg-primary hover:bg-primary/90 text-white shadow-lg hover:shadow-xl dark:bg-accent dark:hover:bg-accent/90 dark:text-slate-900"
+          >
+            Give Online
+            <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+          </Button>
+          <Button
+            size="lg"
+            variant="outline"
+            className="group border-primary/30 dark:border-accent/30 hover:bg-primary/10 dark:hover:bg-accent/10"
+          >
+            Learn About Giving
+            <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
           </Button>
         </motion.div>
 
-        <motion.h2
-          className="font-bold text-6xl text-transparent bg-clip-text bg-linear-to-r from-white via-green-200 to-teal-200 drop-shadow-2xl"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.6 }}
-        >
-          Your Giving Fuels Our Mission
-        </motion.h2>
-
-        <motion.p
-          className="font-medium text-xl w-9/12 mx-auto text-white/90 leading-relaxed drop-shadow-lg"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6, duration: 0.6 }}
-        >
-          Your generosity helps us take the message of Christ farther and touch
-          more lives. Every gift supports the teaching of the Word, outreach
-          efforts, evangelism, and the growth of our ministry. Through your
-          giving, you become a vital part of what God is doing—impacting lives,
-          strengthening believers, and advancing the gospel. Thank you for
-          partnering with us.
-        </motion.p>
-        
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8, duration: 0.5 }}
-          whileHover={{ scale: 1.05, y: -5 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          <Button className="capitalize bg-white text-green-900 hover:bg-green-50 px-10 py-7 text-xl font-bold shadow-2xl hover:shadow-white/50 transition-all duration-300">
-            give now
-          </Button>
+        {/* Stats */}
+        <motion.div variants={itemVariants} className="grid grid-cols-3 gap-8 pt-8 border-t border-border dark:border-primary/20">
+          {[
+            { label: "Active Partners", value: "500+" },
+            { label: "Lives Impacted", value: "10K+" },
+            { label: "Transformation Stories", value: "100+" },
+          ].map((stat) => (
+            <div key={stat.label} className="space-y-1">
+              <p className="text-2xl md:text-3xl font-bold bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
+                {stat.value}
+              </p>
+              <p className="text-xs md:text-sm text-foreground/60 dark:text-accent/70 uppercase tracking-wider">
+                {stat.label}
+              </p>
+            </div>
+          ))}
         </motion.div>
+      </motion.div>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20"
+        animate={{ y: [0, 8, 0] }}
+        transition={{ duration: 2, repeat: Infinity }}
+      >
+        <div className="flex flex-col items-center gap-2">
+          <span className="text-xs text-foreground/50 dark:text-accent/50 uppercase tracking-widest">
+            Scroll to explore
+          </span>
+          <div className="w-6 h-10 border-2 border-primary dark:border-accent rounded-full flex items-center justify-center">
+            <motion.div
+              className="w-1 h-2 bg-primary dark:bg-accent rounded-full"
+              animate={{ y: [0, 8, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
+            />
+          </div>
+        </div>
       </motion.div>
     </section>
   );

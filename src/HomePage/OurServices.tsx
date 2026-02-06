@@ -1,130 +1,161 @@
 import React from "react";
 import { motion, type Variants } from "framer-motion";
+import { Clock, MapPin } from "lucide-react";
 
 interface Service {
   id: number;
-  image: string;
   day: string;
   meeting: string;
-  time: number;
-  am_pm: string;
+  time: string;
+  description: string;
+  icon: React.ReactNode;
 }
 
 const cardVariants: Variants = {
-  hidden: { opacity: 0, y: 50, scale: 0.9 },
+  hidden: { opacity: 0, y: 40, scale: 0.95 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { delay: i * 0.2, duration: 0.5, type: "spring", stiffness: 100 },
+    transition: { delay: i * 0.15, duration: 0.5, type: "spring", stiffness: 100 },
   }),
 };
 
 const services: Service[] = [
-  { id: 1, image: "leadPastor.svg", day: "sunday", meeting: "sunday service", time: 9, am_pm: "am" },
-  { id: 2, image: "leadPastor.svg", day: "tuesday", meeting: "prayer meeting", time: 5, am_pm: "pm" },
-  { id: 3, image: "leadPastor.svg", day: "friday", meeting: "bible study", time: 5, am_pm: "pm" },
-  { id: 4, image: "leadPastor.svg", day: "every first tuesday", meeting: "healing & miracle service", time: 5, am_pm: "pm" },
+  {
+    id: 1,
+    day: "Sunday",
+    meeting: "Main Service",
+    time: "9:00 AM",
+    description: "Join us for our main weekly worship and teaching service",
+    icon: <div className="w-12 h-12 bg-linear-to-br from-primary to-accent rounded-xl flex items-center justify-center text-white text-xl">🙏</div>,
+  },
+  {
+    id: 2,
+    day: "Tuesday",
+    meeting: "Prayer Meeting",
+    time: "5:00 PM",
+    description: "Experience corporate prayer and intercession for our community",
+    icon: <div className="w-12 h-12 bg-linear-to-br from-accent to-primary rounded-xl flex items-center justify-center text-white text-xl">🕯️</div>,
+  },
+  {
+    id: 3,
+    day: "Friday",
+    meeting: "Bible Study",
+    time: "5:00 PM",
+    description: "Deep dive into Scripture for spiritual growth and understanding",
+    icon: <div className="w-12 h-12 bg-linear-to-br from-secondary to-primary rounded-xl flex items-center justify-center text-white text-xl">📖</div>,
+  },
+  {
+    id: 4,
+    day: "1st Tuesday",
+    meeting: "Healing Service",
+    time: "5:00 PM",
+    description: "Experience God's healing power and miracles",
+    icon: <div className="w-12 h-12 bg-linear-to-br from-primary to-secondary rounded-xl flex items-center justify-center text-white text-xl">⚕️</div>,
+  },
 ];
 
-const bgForId = (id: number) => {
-  switch (id) {
-    case 1: return "bg-fuchsia-800 text-white";
-    case 2: return "bg-pink-950 text-white";
-    case 3: return "bg-yellow-800 text-white";
-    case 4: return "bg-slate-900 text-white";
-    default: return "bg-gray-800 text-white";
-  }
-};
-
 const OurServices: React.FC = () => {
-  const renderMeeting = (meeting: string) =>
-    meeting.split(" ").map((word, i, arr) => (
-      <span key={i}>
-        {word}
-        {i < arr.length - 1 && <br />}
-      </span>
-    ));
-
   return (
-    <div className="relative w-full py-20 overflow-hidden">
-      <div className="absolute inset-0 bg-linear-to-b from-white via-purple-50/30 to-white dark:from-gray-900 dark:via-purple-900/20 dark:to-gray-900" />
+    <section className="relative w-full py-16 md:py-24 overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 -z-20">
+        <div className="absolute top-1/2 -right-40 w-96 h-96 bg-primary/10 dark:bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 -left-40 w-96 h-96 bg-accent/10 dark:bg-accent/5 rounded-full blur-3xl" />
+      </div>
 
       <motion.div
-        className="relative z-10 w-10/12 mx-auto flex flex-col items-center justify-center space-y-6"
-        initial={{ opacity: 0, y: -30 }}
+        className="container-responsive flex flex-col items-center justify-center space-y-12"
+        initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false, amount: 0.3 }}
         transition={{ duration: 0.6 }}
       >
-        <motion.h2
-          className="uppercase bg-clip-text text-5xl font-bold text-transparent bg-linear-to-r from-purple-600 to-blue-600"
-          animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
-          transition={{ duration: 5, repeat: Infinity }}
-          style={{ backgroundSize: "200% 200%" }}
-        >
-          our services
-        </motion.h2>
+        {/* Header */}
+        <div className="text-center space-y-4 max-w-2xl">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.1 }}
+            className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 dark:bg-accent/10 rounded-full border border-primary/20 dark:border-accent/20"
+          >
+            <span className="w-2 h-2 bg-primary dark:bg-accent rounded-full" />
+            <span className="text-xs font-semibold text-primary dark:text-accent uppercase">
+              Our Schedule
+            </span>
+          </motion.div>
 
-        <motion.p
-          className="font-medium text-black dark:text-slate-100 text-center px-6 text-lg max-w-3xl"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: false }}
-          transition={{ delay: 0.3, duration: 0.6 }}
-        >
-          Our services are centered on worship, the Word, and spiritual growth.
-          Each gathering helps believers understand Christ better and walk in
-          all God has accomplished for them. Join us to experience clarity,
-          fellowship, and transformation in His presence.
-        </motion.p>
-      </motion.div>
+          <h2 className="heading-2 text-foreground dark:text-white">
+            Service Times & Programs
+          </h2>
+          <p className="body-lg text-foreground/70 dark:text-accent/80">
+            Join us for inspiring worship, prayer, and biblical teaching throughout the week
+          </p>
+        </div>
 
-      <div className="relative z-10 w-10/12 mx-auto">
-        <motion.div
-          className="w-full md:w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 py-10"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false, amount: 0.2 }}
-        >
-          {services.map((item, index) => (
+        {/* Service Cards */}
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {services.map((service, i) => (
             <motion.div
-              key={item.id}
-              className="rounded-2xl relative cursor-pointer overflow-hidden"
-              custom={index}
+              key={service.id}
+              custom={i}
               variants={cardVariants}
-              whileHover={{ scale: 1.03, rotate: [0, -1, 1, 0], boxShadow: "0 20px 60px rgba(0,0,0,0.18)" }}
-              whileTap={{ scale: 0.98 }}
-              transition={{ type: "spring", stiffness: 300 }}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.3 }}
+              className="group relative"
             >
-              <div className="flex h-[150px]">
-                <div className="w-1/2 h-full overflow-hidden">
-                  <img src={item.image} alt={item.meeting} className="object-cover w-full h-full" />
+              {/* Card */}
+              <div className="h-full p-6 rounded-xl border border-border dark:border-primary/20 bg-background dark:bg-muted hover:border-primary dark:hover:border-accent shadow-sm hover:shadow-lg dark:hover:shadow-primary/10 transition-all duration-300">
+                {/* Icon */}
+                <div className="mb-4 transform group-hover:scale-110 transition-transform">
+                  {service.icon}
                 </div>
 
-                <div className={`w-1/2 flex flex-col justify-center items-end pr-5 ${bgForId(item.id)}`}>
-                  <p className={`${item.id === 4 ? "text-xs uppercase" : "text-lg uppercase"}`}>
-                    {item.day}
-                  </p>
+                {/* Content */}
+                <h3 className="heading-4 text-foreground dark:text-accent mb-2">
+                  {service.meeting}
+                </h3>
 
-                  <p className={`${item.id === 4 ? "text-2xl text-end uppercase" : "text-3xl uppercase text-end"}`}>
-                    {renderMeeting(item.meeting)}
-                  </p>
+                <p className="text-sm text-foreground/60 dark:text-accent/60 mb-4">
+                  {service.day}
+                </p>
+
+                {/* Time */}
+                <div className="flex items-center gap-2 mb-3 text-primary dark:text-accent font-semibold">
+                  <Clock className="w-4 h-4" />
+                  {service.time}
                 </div>
-              </div>
 
-              <div
-                className={`absolute top-8 -right-12 rounded-xl p-3 shadow-lg ${bgForId(item.id)}`}
-                style={{ width: 72 }}
-              >
-                <p className="font-bold text-3xl leading-none">{item.time}</p>
-                <p className="font-medium text-sm leading-none">{item.am_pm}</p>
+                {/* Description */}
+                <p className="text-sm text-foreground/70 dark:text-accent/70">
+                  {service.description}
+                </p>
               </div>
             </motion.div>
           ))}
+        </div>
+
+        {/* Location Info */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+          className="w-full p-6 md:p-8 rounded-xl border border-primary/20 dark:border-accent/20 bg-primary/5 dark:bg-accent/5"
+        >
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+            <MapPin className="w-6 h-6 text-primary dark:text-accent shrink-0" />
+            <div>
+              <p className="font-semibold text-foreground dark:text-accent text-lg">Our Location</p>
+              <p className="text-foreground/70 dark:text-accent/70 mt-1">
+                Hall 1, Kings Primary School, Aduin Area, Ogbomoso
+              </p>
+            </div>
+          </div>
         </motion.div>
-      </div>
-    </div>
+      </motion.div>
+    </section>
   );
 };
 
