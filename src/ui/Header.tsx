@@ -39,9 +39,6 @@ const Header = () => {
             height={60}
             className="w-12 h-12 md:w-16 md:h-16"
           />
-          <span className="hidden sm:block heading-4 text-primary dark:text-accent">
-            Light
-          </span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -65,7 +62,13 @@ const Header = () => {
 
         {/* Right Side - Actions */}
         <div className="flex items-center gap-3 md:gap-4">
-          <Button className="hidden sm:inline-flex btn-primary text-sm">
+          <Button 
+            onClick={() => {
+              const givingSection = document.getElementById('giving-section');
+              givingSection?.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="hidden sm:inline-flex btn-primary text-sm"
+          >
             Give Now
           </Button>
           <Themetoggler />
@@ -105,7 +108,16 @@ const Header = () => {
                 {item.label}
               </NavLink>
             ))}
-            <Button className="w-full btn-primary mt-4">Give Now</Button>
+            <Button 
+              onClick={() => {
+                const givingSection = document.getElementById('giving-section');
+                givingSection?.scrollIntoView({ behavior: 'smooth' });
+                setIsOpen(false);
+              }}
+              className="w-full btn-primary mt-4"
+            >
+              Give Now
+            </Button>
           </nav>
         </div>
       )}

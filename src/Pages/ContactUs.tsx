@@ -17,6 +17,7 @@ const ContactUs = () => {
       initial="initial"
       animate="animate"
       exit="exit"
+      className="pb-80"
     >
       <ContactUsAndForm />
     </motion.section>

@@ -24,25 +24,25 @@ const ContactInfo = () => {
     {
       icon: Phone,
       title: "Call Us",
-      details: ["Main: (555) 123-4567", "Prayer Line: (555) 123-4568"],
+      details: ["Main: (234) 813-662 1545", "Prayer Line: (234) 813-662 1545"],
       color: "from-blue-500 to-cyan-500",
     },
     {
       icon: Mail,
       title: "Email Us",
-      details: ["General: hello@household-of-light.com", "Prayer: prayer@household-of-light.com"],
+      details: ["General: thehouseholdoflight@gmail.com", "Prayer: thehouseholdoflight@gmail.com"],
       color: "from-purple-500 to-pink-500",
     },
     {
       icon: MapPin,
       title: "Visit Us",
-      details: ["123 Grace Street", "Your City, ST 12345"],
+      details: ["Kings International Primary School", "Adunin Ogbomoso"],
       color: "from-green-500 to-emerald-500",
     },
     {
       icon: Clock,
       title: "Service Times",
-      details: ["Sunday: 9:00 AM & 11:00 AM", "Wednesday: 7:00 PM"],
+      details: ["Sunday: 9:00 AM & 11:00 AM", "Tuesday: 5:00 PM, Friday: 5:00 PM"],
       color: "from-orange-500 to-amber-500",
     },
   ];

@@ -100,24 +100,6 @@ const ContactUsHero = () => {
             <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
           </Button>
         </motion.div>
-
-        {/* Quick Info */}
-        <motion.div variants={itemVariants} className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 pt-8 border-t border-border dark:border-primary/20">
-          {[
-            { label: "Response Time", value: "24 Hours" },
-            { label: "Service Hours", value: "24/7" },
-            { label: "Team Members", value: "50+" },
-          ].map((item) => (
-            <div key={item.label} className="space-y-1">
-              <p className="text-sm text-foreground/60 dark:text-accent/70 uppercase tracking-wider font-semibold">
-                {item.label}
-              </p>
-              <p className="text-xl md:text-2xl font-bold text-foreground dark:text-accent">
-                {item.value}
-              </p>
-            </div>
-          ))}
-        </motion.div>
       </motion.div>
 
       {/* Scroll Indicator */}

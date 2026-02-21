@@ -21,50 +21,59 @@ const DiscipleshipStructure = () => {
   const levels = [
     {
       level: "01",
-      title: "Foundation",
+      title: "Membership Class",
       subtitle: "Getting Started in Christ",
-      description: "New believers establish their foundation in Jesus. Learn the basics of salvation, the Holy Spirit's role, and spiritual disciplines.",
+      description: "Our Membership Class introduces you to the foundation of our faith, the values we uphold, and what it means to be part of our church family. It’s a simple, welcoming step that helps you understand who we are and how you can grow, belong, and serve with us.",
       focuses: [
-        "Born again experience",
-        "Fundamentals of faith",
-        "Bible reading habits",
-        "Prayer foundation",
+        "What every believer should know",
+        "Evangelism and Discipleship ",
+        "Bible Interepretation",
+        "Prayer",
       ],
       icon: "🌱",
       color: "from-primary to-primary/70",
     },
     {
       level: "02",
-      title: "Growth",
-      subtitle: "Becoming Strong in Faith",
-      description: "Believers develop spiritual maturity through consistent study, application, and community. Understand Scripture deeper and walk in victory.",
+      title: "Workforce Training School",
+      subtitle: "Our Workforce Training School equips volunteers with the knowledge and skills needed to serve effectively. It’s a simple, practical training that prepares you to serve with excellence, commitment, and a clear understanding of ministry.",
       focuses: [
-        "Deep Scripture study",
-        "Spiritual gifts discovery",
-        "Victory over sin",
-        "Christ-like character",
+        "Ministry",
+        "Service in the church",
       ],
       icon: "🌿",
       color: "from-primary/80 to-accent",
     },
     {
       level: "03",
-      title: "Multiplication",
-      subtitle: "Reproducing Christ in Others",
-      description: "Mature believers invest in others, serving as mentors and leaders. Equip the next generation to follow Jesus authentically.",
+      title: "Bible School",
+      subtitle: "Our Bible School helps believers grow deeper in the knowledge of Scripture. Through clear, structured teaching, you’ll gain a stronger foundation in the Word and learn how to apply it to everyday life.",
       focuses: [
-        "Mentorship capability",
-        "Leadership development",
-        "Team building",
-        "Kingdom impact",
+        "In-depth Bible study",
+        "Exegesis and Hermeneutics",
+        "Biblical interpretation",
+        "Theology",
       ],
       icon: "🌳",
+      color: "from-accent to-accent/70",
+    },
+    {
+      level: "04",
+      title: "Leadership School",
+      subtitle: "Our Leadership School equips believers to lead with vision, character, and Christlike influence. It’s a simple, practical training that prepares you to serve, guide, and impact others effectively in ministry and beyond.",
+      focuses: [
+        "Leadership principles",
+        "Character development",
+        "Servant leadership",
+        "Mentorship and discipleship",
+      ],
+      icon: "🌴",
       color: "from-accent to-accent/70",
     },
   ];
 
   return (
-    <section className="relative w-full py-16 md:py-24 overflow-hidden">
+    <section className="relative w-full py-16 md:py-24 overflow-hidden ">
       {/* Background */}
       <div className="absolute inset-0 -z-20 bg-background dark:bg-slate-950" />
 
@@ -172,7 +181,7 @@ const DiscipleshipStructure = () => {
                       </div>
 
                       <div className="flex items-center justify-center gap-2 text-2xl">
-                        {[...Array(3)].map((_, i) => (
+                        {[...Array(4)].map((_, i) => (
                           <span
                             key={i}
                             className={`opacity-${i < parseInt(item.level) ? "100" : "20"}`}

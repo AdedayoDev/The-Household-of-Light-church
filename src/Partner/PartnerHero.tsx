@@ -3,7 +3,11 @@ import { motion, type Variants } from "framer-motion";
 import { useState } from "react";
 import { ArrowRight, Heart } from "lucide-react";
 
-const PartnerHero = () => {
+interface PartnerHeroProps {
+  givingRef?: React.RefObject<HTMLDivElement>;
+}
+
+const PartnerHero = ({ givingRef }: PartnerHeroProps) => {
   const [randomValues] = useState<Array<{ duration: number; delay: number; left: number; top: number }>>(() =>
     [...Array(12)].map(() => ({
       duration: Math.random() * 8 + 6,
@@ -87,6 +91,7 @@ const PartnerHero = () => {
         <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button
             size="lg"
+            onClick={() => givingRef?.current?.scrollIntoView({ behavior: "smooth" })}
             className="group bg-primary hover:bg-primary/90 text-white shadow-lg hover:shadow-xl dark:bg-accent dark:hover:bg-accent/90 dark:text-slate-900"
           >
             Give Online
@@ -94,6 +99,7 @@ const PartnerHero = () => {
           </Button>
           <Button
             size="lg"
+            onClick={() => givingRef?.current?.scrollIntoView({ behavior: "smooth" })}
             variant="outline"
             className="group border-primary/30 dark:border-accent/30 hover:bg-primary/10 dark:hover:bg-accent/10"
           >
@@ -102,23 +108,7 @@ const PartnerHero = () => {
           </Button>
         </motion.div>
 
-        {/* Stats */}
-        <motion.div variants={itemVariants} className="grid grid-cols-3 gap-8 pt-8 border-t border-border dark:border-primary/20">
-          {[
-            { label: "Active Partners", value: "500+" },
-            { label: "Lives Impacted", value: "10K+" },
-            { label: "Transformation Stories", value: "100+" },
-          ].map((stat) => (
-            <div key={stat.label} className="space-y-1">
-              <p className="text-2xl md:text-3xl font-bold bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
-                {stat.value}
-              </p>
-              <p className="text-xs md:text-sm text-foreground/60 dark:text-accent/70 uppercase tracking-wider">
-                {stat.label}
-              </p>
-            </div>
-          ))}
-        </motion.div>
+        
       </motion.div>
 
       {/* Scroll Indicator */}

@@ -1,6 +1,7 @@
 import PartnerHero from "@/Partner/PartnerHero"
 import SpreadTheGospel from "@/Partner/SpreadTheGospel";
 import { motion } from "framer-motion"
+import { useRef } from "react"
 
 const pageVariants = {
   initial: { opacity: 0, y: 20 },
@@ -13,15 +14,20 @@ const pageVariants = {
 };
 
 const Partner = () => {
+  const givingRef = useRef<HTMLDivElement>(null!);
+
   return (
     <motion.div
       variants={pageVariants}
       initial="initial"
       animate="animate"
       exit="exit"
+      className="pb-80"
     >
-      <PartnerHero/>
-      <SpreadTheGospel/>
+      <PartnerHero givingRef={givingRef}/>
+      <div ref={givingRef}>
+        <SpreadTheGospel/>
+      </div>
     </motion.div>
   )
 }

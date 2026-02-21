@@ -22,12 +22,13 @@ const AboutUs = () => {
       initial="initial"
       animate="animate"
       exit="exit"
+      className="pb-80"
     >
      <AboutUsHero/>
      <CalledToPreach />
      <DoctrineVisonMission/>
      <DiscipleshipStructure/>
-     <LeadPastor wrapperClassName="pb-72"/>
+     <LeadPastor/>
     </motion.div>
   )
 }

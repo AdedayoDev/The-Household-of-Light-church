@@ -3,10 +3,10 @@
 
 /* ============================================================================
    TYPOGRAPHY IMPORTS - Google Fonts
-   Playfair Display: Premium serif for headings
-   Inter: Modern sans-serif for body text
+   Montserrat: Premium sans-serif for headings
+   Lato: Modern sans-serif for body text and paragraphs
 ============================================================================ */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Lato:wght@300;400;500;700;900&display=swap');
 
 /* ============================================================================
    DARK MODE SELECTOR
@@ -126,11 +126,11 @@
 
   body {
     @apply bg-background text-foreground font-sans;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Lato', sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 700;
   }
 }
@@ -139,41 +139,41 @@
    TYPOGRAPHY UTILITIES
 ============================================================================ */
 @layer components {
-  /* Heading Typography */
+  /* Heading Typography - Montserrat */
   .heading-1 {
     @apply text-4xl md:text-5xl lg:text-6xl font-bold leading-tight;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Montserrat', sans-serif;
   }
 
   .heading-2 {
     @apply text-3xl md:text-4xl lg:text-5xl font-bold leading-tight;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Montserrat', sans-serif;
   }
 
   .heading-3 {
     @apply text-2xl md:text-3xl font-bold leading-snug;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Montserrat', sans-serif;
   }
 
   .heading-4 {
     @apply text-xl md:text-2xl font-semibold leading-snug;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Montserrat', sans-serif;
   }
 
-  /* Body Typography */
+  /* Body Typography - Lato */
   .body-lg {
     @apply text-lg leading-relaxed font-normal;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Lato', sans-serif;
   }
 
   .body-base {
     @apply text-base leading-relaxed font-normal;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Lato', sans-serif;
   }
 
   .body-sm {
     @apply text-sm leading-relaxed font-normal;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Lato', sans-serif;
   }
 
   /* Button Variants */
