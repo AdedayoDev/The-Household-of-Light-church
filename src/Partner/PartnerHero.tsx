@@ -31,7 +31,7 @@ const PartnerHero = ({ givingRef }: PartnerHeroProps) => {
   };
 
   return (
-    <section className="relative h-[90vh] w-full flex items-center justify-center overflow-hidden">
+    <section className="relative h-screen md:h-[90vh] w-full flex items-center justify-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 -z-20 bg-linear-to-br from-slate-50 via-background to-muted dark:from-slate-950 dark:via-slate-900/50 dark:to-slate-950" />
 

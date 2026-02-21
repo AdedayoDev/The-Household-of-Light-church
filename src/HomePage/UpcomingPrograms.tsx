@@ -47,7 +47,7 @@ const UpcomingPrograms: React.FC = () => {
         <div className="absolute -bottom-20 left-1/3 w-96 h-96 bg-accent/10 dark:bg-accent/5 rounded-full blur-3xl" />
       </div>
 
-      <div className="container-responsive">
+      <div className="w-10/12 mx-auto">
         <motion.div
           className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center"
           variants={containerVariants}
@@ -65,7 +65,7 @@ const UpcomingPrograms: React.FC = () => {
                   Special Event
                 </span>
               </div>
-              <h2 className="heading-1 text-foreground dark:text-white leading-tight">
+              <h2 className="heading-1 heading-gradient dark:text-white leading-tight">
                 Upcoming Special Meeting
               </h2>
             </motion.div>
@@ -103,7 +103,7 @@ const UpcomingPrograms: React.FC = () => {
           {/* Right Image */}
           <motion.div
             variants={rightVariants}
-            className="relative h-96 lg:h-full min-h-96 flex items-center justify-center"
+            className="relative h-72 sm:h-96 lg:h-full min-h-96 flex items-center justify-center"
           >
             {/* Decorative circle background */}
             <motion.div

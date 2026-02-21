@@ -26,7 +26,7 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60 dark:border-primary/10">
-      <div className="container-responsive flex items-center justify-between h-20 md:h-24">
+      <div className="w-10/12 mx-auto flex items-center justify-between h-20 md:h-24">
         {/* Logo */}
         <Link
           to="/"
@@ -48,7 +48,7 @@ const Header = () => {
               key={item.to}
               to={item.to}
               className={({ isActive }) =>
-                `heading-4 text-sm lg:text-base font-semibold transition-colors duration-300 ${
+                `heading-4 text-base lg:text-lg font-semibold transition-colors duration-300 ${
                   isActive
                     ? "text-primary dark:text-accent"
                     : "text-foreground/70 hover:text-primary dark:hover:text-accent"
@@ -91,14 +91,14 @@ const Header = () => {
       {/* Mobile Navigation Menu */}
       {isOpen && (
         <div className="md:hidden border-t border-border bg-background dark:bg-muted animate-fade-in-up">
-          <nav className="container-responsive py-4 space-y-3">
+          <nav className="w-10/12 mx-auto py-6 space-y-4">
             {NavItems.map((item) => (
               <NavLink
                 key={item.to}
                 to={item.to}
                 onClick={() => setIsOpen(false)}
                 className={({ isActive }) =>
-                  `block px-4 py-2 rounded-lg font-semibold transition-colors ${
+                  `block px-4 py-3 rounded-lg font-semibold text-base transition-colors ${
                     isActive
                       ? "bg-primary/10 text-primary dark:bg-accent/10 dark:text-accent"
                       : "text-foreground/70 hover:bg-muted dark:hover:bg-muted/50"

@@ -48,12 +48,12 @@ const ContactInfo = () => {
   ];
 
   return (
-    <section className="relative w-full py-16 md:py-24 overflow-hidden">
+    <section className="relative w-full py-16 md:py-24 overflow-hidden bg-white dark:bg-slate-900/50">
       {/* Background */}
-      <div className="absolute inset-0 -z-20 bg-muted dark:bg-slate-900/50" />
+      <div className="absolute inset-0 -z-20" />
 
       <motion.div
-        className="container-responsive flex flex-col items-center justify-center space-y-12"
+        className="w-10/12 mx-auto flex flex-col items-center justify-center space-y-12"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -61,10 +61,10 @@ const ContactInfo = () => {
       >
         {/* Header */}
         <motion.div variants={itemVariants} className="text-center space-y-4 max-w-2xl">
-          <h2 className="heading-2 text-foreground dark:text-white">
+          <h2 className="heading-2 heading-gradient dark:text-white">
             Contact Information
           </h2>
-          <p className="body-lg text-foreground/70 dark:text-accent/80">
+          <p className="body-lg text-gray-600 dark:text-accent/80">
             Reach out to us through any of these channels. We're always happy to connect with you.
           </p>
         </motion.div>

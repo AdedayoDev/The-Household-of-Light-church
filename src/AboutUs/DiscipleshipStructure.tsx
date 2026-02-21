@@ -78,7 +78,7 @@ const DiscipleshipStructure = () => {
       <div className="absolute inset-0 -z-20 bg-background dark:bg-slate-950" />
 
       <motion.div
-        className="container-responsive flex flex-col items-center justify-center space-y-16"
+        className="w-10/12 mx-auto flex flex-col items-center justify-center space-y-16"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -92,10 +92,10 @@ const DiscipleshipStructure = () => {
               Spiritual Growth Path
             </span>
           </div>
-          <h2 className="heading-2 text-foreground dark:text-white">
+          <h2 className="heading-2 heading-gradient dark:text-white">
             Our Discipleship Structure
           </h2>
-          <p className="body-lg text-foreground/70 dark:text-accent/80">
+          <p className="body-lg text-gray-600 dark:text-accent/80">
             Three levels of spiritual maturity and kingdom impact
           </p>
         </motion.div>

@@ -30,16 +30,16 @@ const SpreadTheGospel = () => {
   };
 
   return (
-    <section id="giving-section" className="relative w-full py-12 md:py-16 lg:py-20 overflow-hidden">
+    <section id="giving-section" className="relative w-full py-12 md:py-16 lg:py-20 overflow-hidden bg-white dark:bg-slate-950">
       {/* Decorative Background */}
       <div className="absolute inset-0 -z-20">
         <div className="absolute top-20 right-1/4 w-96 h-96 bg-primary/10 dark:bg-primary/5 rounded-full blur-3xl animate-pulse" />
         <div className="absolute -bottom-20 left-1/3 w-96 h-96 bg-accent/10 dark:bg-accent/5 rounded-full blur-3xl" />
       </div>
 
-      <div className="container-responsive flex flex-col items-center justify-center">
+      <div className="w-10/12 md:w-full md:max-w-7xl md:mx-auto md:px-6 lg:px-8 mx-auto flex flex-col items-center justify-center">
         <motion.div
-          className="flex flex-col items-center justify-center space-y-8 w-full max-w-3xl"
+          className="flex flex-col items-center justify-center space-y-8 w-full max-w-2xl"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -57,12 +57,12 @@ const SpreadTheGospel = () => {
               </span>
             </div>
 
-            <h2 className="heading-2 text-foreground dark:text-white leading-tight">
+            <h2 className="heading-2 heading-gradient dark:text-white leading-tight">
               Partner With Us to Spread the Gospel
             </h2>
 
-            <div className="space-y-3 text-foreground/70 dark:text-accent/80">
-              <p className="body-base leading-relaxed">
+            <div className="space-y-3 text-gray-600 dark:text-accent/80">
+              <p className="body-base leading-relaxed text-sm sm:text-base">
                 Your giving efforts help share the gospel and touch more lives with the message of Christ. We give with gratitude, knowing every seed supports God's work through ministry. Thank you for partnering with us.
               </p>
             </div>
@@ -77,13 +77,13 @@ const SpreadTheGospel = () => {
               <TabsList className="grid w-full grid-cols-2 mb-6 bg-muted dark:bg-slate-900 p-1 rounded-lg">
                 <TabsTrigger 
                   value="offline"
-                  className="data-[state=active]:bg-primary dark:data-[state=active]:bg-accent data-[state=active]:text-white dark:data-[state=active]:text-slate-900 rounded-md transition-all text-sm"
+                  className="data-[state=active]:bg-primary dark:data-[state=active]:bg-accent data-[state=active]:text-white dark:data-[state=active]:text-slate-900 rounded-md transition-all text-xs sm:text-sm"
                 >
                   Offline Giving
                 </TabsTrigger>
                 <TabsTrigger 
                   value="online"
-                  className="data-[state=active]:bg-primary dark:data-[state=active]:bg-accent data-[state=active]:text-white dark:data-[state=active]:text-slate-900 rounded-md transition-all text-sm"
+                  className="data-[state=active]:bg-primary dark:data-[state=active]:bg-accent data-[state=active]:text-white dark:data-[state=active]:text-slate-900 rounded-md transition-all text-xs sm:text-sm"
                 >
                   Online Giving
                 </TabsTrigger>

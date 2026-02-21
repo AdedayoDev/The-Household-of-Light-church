@@ -141,38 +141,38 @@
 @layer components {
   /* Heading Typography - Montserrat */
   .heading-1 {
-    @apply text-4xl md:text-5xl lg:text-6xl font-bold leading-tight;
+    @apply text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight;
     font-family: 'Montserrat', sans-serif;
   }
 
   .heading-2 {
-    @apply text-3xl md:text-4xl lg:text-5xl font-bold leading-tight;
+    @apply text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight;
     font-family: 'Montserrat', sans-serif;
   }
 
   .heading-3 {
-    @apply text-2xl md:text-3xl font-bold leading-snug;
+    @apply text-lg sm:text-2xl md:text-3xl font-bold leading-snug;
     font-family: 'Montserrat', sans-serif;
   }
 
   .heading-4 {
-    @apply text-xl md:text-2xl font-semibold leading-snug;
+    @apply text-base sm:text-xl md:text-2xl font-semibold leading-snug;
     font-family: 'Montserrat', sans-serif;
   }
 
   /* Body Typography - Lato */
   .body-lg {
-    @apply text-lg leading-relaxed font-normal;
+    @apply text-sm sm:text-lg leading-relaxed font-normal;
     font-family: 'Lato', sans-serif;
   }
 
   .body-base {
-    @apply text-base leading-relaxed font-normal;
+    @apply text-xs sm:text-base leading-relaxed font-normal;
     font-family: 'Lato', sans-serif;
   }
 
   .body-sm {
-    @apply text-sm leading-relaxed font-normal;
+    @apply text-xs sm:text-sm leading-relaxed font-normal;
     font-family: 'Lato', sans-serif;
   }
 
@@ -196,6 +196,20 @@
 
   .card-dark {
     @apply dark:bg-muted;
+  }
+
+  /* Gradient Heading Utility - Purple to Black on Light Mode */
+  .heading-gradient {
+    background: linear-gradient(135deg, #9B28B0 0%, #000000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .dark .heading-gradient {
+    background: none;
+    -webkit-text-fill-color: unset;
+    @apply text-accent;
   }
 }
 
@@ -241,6 +255,10 @@
   /* Container utilities */
   .container-responsive {
     @apply w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-8;
+  }
+
+  .container-narrow {
+    @apply w-10/12 mx-auto;
   }
 
   /* Transition utilities */

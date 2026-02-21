@@ -27,7 +27,7 @@ const ContactUsHero = () => {
   };
 
   return (
-    <section className="relative h-[90vh] w-full flex items-center justify-center overflow-hidden">
+    <section className="relative h-screen md:h-[90vh] w-full flex items-center justify-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 -z-20 bg-linear-to-br from-slate-50 via-background to-muted dark:from-slate-950 dark:via-slate-900/50 dark:to-slate-950" />
 
@@ -57,7 +57,7 @@ const ContactUsHero = () => {
 
       {/* Content */}
       <motion.div
-        className="container-responsive relative z-10 flex flex-col items-center justify-center text-center space-y-8"
+        className="w-10/12 mx-auto relative z-10 flex flex-col items-center justify-center text-center space-y-8"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -74,7 +74,7 @@ const ContactUsHero = () => {
 
         {/* Heading */}
         <motion.div variants={itemVariants} className="space-y-4 max-w-3xl">
-          <h1 className="heading-1 text-foreground dark:text-white leading-tight">
+          <h1 className="heading-1 heading-gradient dark:text-white leading-tight">
             Get in Touch
           </h1>
           <p className="text-lg md:text-xl text-foreground/70 dark:text-accent/80">

@@ -48,7 +48,7 @@ const DoctrineVisonMission = () => {
       </div>
 
       <motion.div
-        className="container-responsive flex flex-col items-center justify-center space-y-12"
+        className="w-10/12 mx-auto flex flex-col items-center justify-center space-y-12"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -62,7 +62,7 @@ const DoctrineVisonMission = () => {
               Foundation
             </span>
           </div>
-          <h2 className="heading-2 text-foreground dark:text-white">
+          <h2 className="heading-2 heading-gradient dark:text-white">
             Mission, Vision & Doctrine
           </h2>
         </motion.div>

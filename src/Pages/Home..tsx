@@ -33,6 +33,7 @@ const Home = () => {
       initial="initial"
       animate="animate"
       exit="exit"
+      className="pb-96"
     >
      <Hero/>
       <LeadPastor />

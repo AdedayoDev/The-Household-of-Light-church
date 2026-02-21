@@ -135,30 +135,6 @@ const Hero = () => {
             Plan a Visit
           </Button>
         </motion.div>
-
-        {/* Stats/Quick Info */}
-        <motion.div
-          variants={itemVariants}
-          className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-12 w-full max-w-2xl"
-        >
-          {[
-            { label: "Sundays", value: "9:00 AM" },
-            { label: "Tuesdays", value: "5:00 PM" },
-            { label: "Fridays", value: "5:00 PM" },
-          ].map((item) => (
-            <div
-              key={item.label}
-              className="p-4 bg-muted dark:bg-primary/10 rounded-lg border border-border dark:border-primary/20 hover:border-primary dark:hover:border-accent transition-colors"
-            >
-              <p className="text-sm text-muted-foreground dark:text-accent/60 font-medium">
-                {item.label}
-              </p>
-              <p className="text-lg font-semibold text-foreground dark:text-accent">
-                {item.value}
-              </p>
-            </div>
-          ))}
-        </motion.div>
       </motion.div>
 
       {/* Scroll indicator */}

@@ -67,7 +67,7 @@ const OurServices: React.FC = () => {
         <div className="absolute top-1/2 -right-40 w-80 h-80 bg-secondary/10 dark:bg-secondary/5 rounded-full blur-3xl" />
       </div>
 
-      <div className="container-responsive">
+      <div className="w-10/12 mx-auto">
         <motion.div
           className="flex flex-col items-center justify-center space-y-12"
           variants={containerVariants}
@@ -87,7 +87,7 @@ const OurServices: React.FC = () => {
               </span>
             </div>
 
-            <h2 className="heading-1 text-foreground dark:text-white leading-tight">
+            <h2 className="heading-1 heading-gradient dark:text-white leading-tight">
               Our Services
             </h2>
 
