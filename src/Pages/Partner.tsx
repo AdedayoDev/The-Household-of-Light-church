@@ -22,7 +22,7 @@ const Partner = () => {
       initial="initial"
       animate="animate"
       exit="exit"
-      className="pb-96"
+      className="pb-10 md:pb-72"
     >
       <PartnerHero givingRef={givingRef}/>
       <div ref={givingRef}>
