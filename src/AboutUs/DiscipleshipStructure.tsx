@@ -81,9 +81,9 @@ const DiscipleshipStructure = () => {
       <motion.div
         className='w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center space-y-12 md:space-y-16'
         variants={containerVariants}
-        initial='hidden'
+        initial='visible'
         whileInView='visible'
-        viewport={{ once: false, amount: 0.3 }}
+        viewport={{ once: false, amount: 0.1 }}
       >
         {/* Header */}
         <motion.div
@@ -115,16 +115,14 @@ const DiscipleshipStructure = () => {
               variants={itemVariants}
               className='group grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center'
             >
-              {/* Content */}
+              {/* Content - Always first on mobile */}
               <div
-                className={`order-2 ${
-                  index % 2 === 1 ? "md:order-2" : "md:order-1"
-                }`}
+                className={`${index % 2 === 1 ? "md:order-2" : "md:order-1"}`}
               >
                 <div className='space-y-4'>
                   <div className='flex items-center gap-4'>
                     <div
-                      className={`bg-linear-to-br ${item.color} p-4 rounded-lg`}
+                      className={`bg-linear-to-br ${item.color} p-4 rounded-lg shrink-0`}
                     >
                       <span className='text-3xl'>{item.icon}</span>
                     </div>
@@ -154,7 +152,7 @@ const DiscipleshipStructure = () => {
                       {item.focuses.map((focus) => (
                         <li key={focus} className='flex items-center gap-2'>
                           <div
-                            className={`w-1.5 h-1.5 rounded-full bg-linear-to-r ${item.color}`}
+                            className={`w-1.5 h-1.5 rounded-full bg-linear-to-r ${item.color} shrink-0`}
                           />
                           <span className='text-sm text-foreground/60 dark:text-accent/70'>
                             {focus}
@@ -168,9 +166,7 @@ const DiscipleshipStructure = () => {
 
               {/* Visual Level Card */}
               <div
-                className={`order-1 ${
-                  index % 2 === 1 ? "md:order-1" : "md:order-2"
-                }`}
+                className={`${index % 2 === 1 ? "md:order-1" : "md:order-2"}`}
               >
                 <div className='relative'>
                   <div
