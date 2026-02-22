@@ -275,3 +275,32 @@
     @apply text-black/60 dark:text-white/70;
   }
 }
+
+/* ============================================================================
+   ACCESSIBILITY - Respect prefers-reduced-motion
+============================================================================ */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ============================================================================
+   PERFORMANCE OPTIMIZATIONS
+============================================================================ */
+/* Enable GPU acceleration for animations */
+@layer utilities {
+  .will-animate {
+    @apply will-change-transform;
+  }
+
+  .backface-hidden {
+    @apply backface-hidden;
+  }
+
+  .gpu-accelerated {
+    @apply transform-[translateZ(0)] will-change-transform;
+  }
+}

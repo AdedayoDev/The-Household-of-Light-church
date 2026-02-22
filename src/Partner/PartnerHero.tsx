@@ -1,20 +1,56 @@
 import { Button } from "@/components/ui/button";
 import { motion, type Variants } from "framer-motion";
-import { useState } from "react";
+import { useState, memo } from "react";
 import { ArrowRight, Heart } from "lucide-react";
 
 interface PartnerHeroProps {
   givingRef?: React.RefObject<HTMLDivElement>;
 }
 
+// Memoized particle component for performance
+interface ParticleProps {
+  values: {
+    duration: number;
+    delay: number;
+    left: number;
+    top: number;
+  };
+  i: number;
+}
+
+const AnimatedParticle = memo(({ values, i }: ParticleProps) => (
+  <motion.div
+    key={i}
+    className="absolute w-2 h-2 rounded-full bg-linear-to-r from-primary to-accent"
+    animate={{
+      y: [0, -200, 0],
+      x: [0, Math.sin(i) * 100, 0],
+      opacity: [0, 0.8, 0],
+    }}
+    transition={{
+      duration: values.duration,
+      repeat: Infinity,
+      delay: values.delay,
+    }}
+    style={{
+      left: `${values.left}%`,
+      top: `${values.top}%`,
+    }}
+  />
+));
+
+AnimatedParticle.displayName = "AnimatedParticle";
+
 const PartnerHero = ({ givingRef }: PartnerHeroProps) => {
-  const [randomValues] = useState<Array<{ duration: number; delay: number; left: number; top: number }>>(() =>
-    [...Array(12)].map(() => ({
-      duration: Math.random() * 8 + 6,
-      delay: Math.random() * 5,
-      left: Math.random() * 100,
-      top: Math.random() * 100,
-    }))
+  // Use useState to store random values (only generated once)
+  const [randomValues] = useState<Array<{ duration: number; delay: number; left: number; top: number }>>(
+    () =>
+      [...Array(8)].map(() => ({
+        duration: Math.random() * 8 + 6,
+        delay: Math.random() * 5,
+        left: Math.random() * 100,
+        top: Math.random() * 100,
+      }))
   );
 
   const containerVariants: Variants = {
@@ -37,26 +73,10 @@ const PartnerHero = ({ givingRef }: PartnerHeroProps) => {
 
       {/* Animated Particles */}
       <div className="absolute inset-0 opacity-10 dark:opacity-20 -z-10">
-        {randomValues.map((values, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 rounded-full bg-linear-to-r from-primary to-accent"
-            animate={{
-              y: [0, -200, 0],
-              x: [0, Math.sin(i) * 100, 0],
-              opacity: [0, 0.8, 0],
-            }}
-            transition={{
-              duration: values.duration,
-              repeat: Infinity,
-              delay: values.delay,
-            }}
-            style={{
-              left: `${values.left}%`,
-              top: `${values.top}%`,
-            }}
-          />
-        ))}
+        {randomValues.length > 0 &&
+          randomValues.map((values, i) => (
+            <AnimatedParticle key={i} values={values} i={i} />
+          ))}
       </div>
 
       {/* Content */}

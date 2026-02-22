@@ -94,7 +94,7 @@ const OnlineGiving = () => {
 
               {/* Custom Amount */}
               <div className="space-y-2">
-                <Label htmlFor="custom-amount" className="text-foreground dark:text-accent">
+                <Label htmlFor="custom-amount" className="text-foreground dark:text-accent text-xs sm:text-sm block">
                   Custom Amount
                 </Label>
                 <div className="flex items-center gap-2">
@@ -114,7 +114,7 @@ const OnlineGiving = () => {
 
             {/* Frequency Selection */}
             <div className="space-y-2">
-              <Label htmlFor="frequency" className="text-foreground dark:text-accent">
+              <Label htmlFor="frequency" className="text-foreground dark:text-accent text-xs sm:text-sm block">
                 Giving Frequency
               </Label>
               <Select value={frequency} onValueChange={setFrequency}>
@@ -132,24 +132,24 @@ const OnlineGiving = () => {
 
             {/* Donor Info */}
             <div className="space-y-4 pt-4 border-t border-border dark:border-primary/20">
-              <h4 className="font-semibold text-foreground dark:text-accent">Donor Information</h4>
+              <h4 className="font-semibold text-foreground dark:text-accent text-base sm:text-lg">Donor Information</h4>
 
               <div className="space-y-2">
-                <Label htmlFor="name" className="text-foreground dark:text-accent">
+                <Label htmlFor="name" className="text-foreground dark:text-accent text-xs sm:text-sm block">
                   Full Name
                 </Label>
                 <Input id="name" placeholder="John Doe" />
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="email" className="text-foreground dark:text-accent">
+                <Label htmlFor="email" className="text-foreground dark:text-accent text-xs sm:text-sm block">
                   Email Address
                 </Label>
                 <Input id="email" type="email" placeholder="john@example.com" />
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="phone" className="text-foreground dark:text-accent">
+                <Label htmlFor="phone" className="text-foreground dark:text-accent text-xs sm:text-sm block">
                   Phone Number
                 </Label>
                 <Input id="phone" type="tel" placeholder="(123) 456-7890" />

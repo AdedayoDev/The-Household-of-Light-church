@@ -80,6 +80,8 @@ const LeadPastor: FC<LeadPastorProps> = ({
               src="/leadPastor.svg"
               alt="Lead Pastor"
               className="w-full h-auto object-cover"
+              loading="lazy"
+              decoding="async"
             />
             {/* Image Overlay */}
             <div className="absolute inset-0 bg-linear-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

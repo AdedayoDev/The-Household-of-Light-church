@@ -153,6 +153,8 @@ const Testimonials = () => {
                             src={testimonial.image}
                             alt={testimonial.name}
                             className="w-full h-full object-cover"
+                            loading="lazy"
+                            decoding="async"
                           />
                         </div>
                         <div>

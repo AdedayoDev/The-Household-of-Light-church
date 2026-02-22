@@ -107,7 +107,7 @@ const UpcomingPrograms: React.FC = () => {
           >
             {/* Decorative circle background */}
             <motion.div
-              className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 dark:from-primary/10 dark:to-accent/10 rounded-3xl blur-2xl"
+              className="absolute inset-0 bg-linear-to-br from-primary/20 to-accent/20 dark:from-primary/10 dark:to-accent/10 rounded-3xl blur-2xl"
               animate={{ scale: [1, 1.05, 1] }}
               transition={{ duration: 4, repeat: Infinity }}
             />
@@ -123,10 +123,12 @@ const UpcomingPrograms: React.FC = () => {
                   src="/upcoming-event.svg"
                   alt="Upcoming Special Meeting"
                   className="w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
                 />
                 
                 {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-linear-to-t from-primary/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
               </div>
 
               {/* Floating accent elements */}

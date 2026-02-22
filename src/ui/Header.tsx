@@ -38,6 +38,7 @@ const Header = () => {
             width={60}
             height={60}
             className="w-12 h-12 md:w-16 md:h-16"
+            decoding="async"
           />
         </Link>
 

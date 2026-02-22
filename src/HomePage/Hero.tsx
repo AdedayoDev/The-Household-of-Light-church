@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { memo } from "react";
 import { motion, type Variants } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Play } from "lucide-react";
@@ -29,18 +29,52 @@ const buttonVariants: Variants = {
   },
 };
 
+interface ParticleType {
+  x: number;
+  y: number;
+  duration: number;
+  delay: number;
+  size: number;
+}
+
+// Memoized particle component to prevent unnecessary re-renders
+const Particle = memo(({ particle, index }: { particle: ParticleType; index: number }) => (
+  <motion.div
+    key={index}
+    className="absolute rounded-full bg-linear-to-br from-primary to-accent"
+    animate={{
+      y: [particle.y, particle.y - 100, particle.y],
+      x: [particle.x, particle.x + 50, particle.x],
+      opacity: [0, 0.6, 0],
+    }}
+    transition={{
+      duration: particle.duration,
+      repeat: Infinity,
+      delay: particle.delay,
+    }}
+    style={{
+      width: particle.size,
+      height: particle.size,
+      left: `${particle.x}%`,
+      top: `${particle.y}%`,
+    }}
+  />
+));
+
+Particle.displayName = "Particle";
+
+import { useState } from "react";
+
 const Hero = () => {
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const particles = useMemo(
-    () =>
-      [...Array(25)].map(() => ({
-        x: Math.random() * 100,
-        y: Math.random() * 100,
-        duration: Math.random() * 5 + 5,
-        delay: Math.random() * 2,
-        size: Math.random() * 2 + 1,
-      })),
-    []
+  // Store particles in state, generate once on mount
+  const [particles] = useState<ParticleType[]>(() =>
+    [...Array(15)].map(() => ({
+      x: Math.random() * 100,
+      y: Math.random() * 100,
+      duration: Math.random() * 5 + 5,
+      delay: Math.random() * 2,
+      size: Math.random() * 2 + 1,
+    }))
   );
 
   return (
@@ -59,26 +93,7 @@ const Hero = () => {
       {/* Floating Particles */}
       <div className="absolute inset-0 -z-10 opacity-20 dark:opacity-30">
         {particles.map((particle, i) => (
-          <motion.div
-            key={i}
-            className="absolute rounded-full bg-linear-to-br from-primary to-accent"
-            animate={{
-              y: [particle.y, particle.y - 100, particle.y],
-              x: [particle.x, particle.x + 50, particle.x],
-              opacity: [0, 0.6, 0],
-            }}
-            transition={{
-              duration: particle.duration,
-              repeat: Infinity,
-              delay: particle.delay,
-            }}
-            style={{
-              width: particle.size,
-              height: particle.size,
-              left: `${particle.x}%`,
-              top: `${particle.y}%`,
-            }}
-          />
+          <Particle key={i} particle={particle} index={i} />
         ))}
       </div>
 

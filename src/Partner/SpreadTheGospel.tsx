@@ -30,14 +30,14 @@ const SpreadTheGospel = () => {
   };
 
   return (
-    <section id="giving-section" className="relative w-full py-12 md:py-16 lg:py-20 overflow-hidden bg-white dark:bg-slate-950">
+    <section id="giving-section" className="relative w-full py-12 md:py-16 lg:py-20 overflow-hidden bg-white dark:bg-slate-950 mt-0 md:mt-0 sm:mt-8">
       {/* Decorative Background */}
       <div className="absolute inset-0 -z-20">
         <div className="absolute top-20 right-1/4 w-96 h-96 bg-primary/10 dark:bg-primary/5 rounded-full blur-3xl animate-pulse" />
         <div className="absolute -bottom-20 left-1/3 w-96 h-96 bg-accent/10 dark:bg-accent/5 rounded-full blur-3xl" />
       </div>
 
-      <div className="w-10/12 md:w-full md:max-w-7xl md:mx-auto md:px-6 lg:px-8 mx-auto flex flex-col items-center justify-center">
+      <div className="w-10/12 md:w-full md:max-w-7xl md:mx-auto md:px-6 lg:px-8 mx-auto flex flex-col items-center justify-center relative md:static">
         <motion.div
           className="flex flex-col items-center justify-center space-y-8 w-full max-w-2xl"
           variants={containerVariants}
@@ -141,6 +141,7 @@ const SpreadTheGospel = () => {
                           src="https://moneypoint.com.ng/assets/images/moneypoint-logo.png" 
                           alt="MoneyPoint Logo"
                           className="h-12 w-auto"
+                          loading="lazy"
                           onError={(e) => {
                             const target = e.target as HTMLImageElement;
                             target.style.display = 'none';
@@ -218,7 +219,7 @@ const SpreadTheGospel = () => {
 
                     {/* Card Preview */}
                     <motion.div
-                      className="p-4 rounded-lg bg-gradient-to-br from-primary via-accent to-primary dark:from-accent dark:via-primary dark:to-accent text-white shadow-lg text-sm"
+                      className="p-4 rounded-lg bg-linear-to-br from-primary via-accent to-primary dark:from-accent dark:via-primary dark:to-accent text-white shadow-lg text-sm"
                       animate={{ rotateY: 5 }}
                     >
                       <div className="space-y-4">
