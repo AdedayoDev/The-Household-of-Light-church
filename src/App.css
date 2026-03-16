@@ -6,7 +6,7 @@
    Montserrat: Premium sans-serif for headings
    Lato: Modern sans-serif for body text and paragraphs
 ============================================================================ */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Lato:wght@300;400;500;700;900&display=swap');
+/* Fonts loaded via <link> in index.html to avoid PostCSS @import order issues. */
 
 /* ============================================================================
    DARK MODE SELECTOR

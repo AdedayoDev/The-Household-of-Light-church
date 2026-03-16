@@ -15,7 +15,7 @@ const Header = () => {
   const NavItems: Nav[] = [
     { label: "Home", to: "/" },
     { label: "About Us", to: "/about-us" },
-    { label: "Sermons", to: "/sermons" },
+    { label: "Messages", to: "/messages" },
     { label: "Partner", to: "/partner" },
     { label: "Contact Us", to: "/contact-us" },
   ];

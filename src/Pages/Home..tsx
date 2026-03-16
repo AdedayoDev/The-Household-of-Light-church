@@ -3,6 +3,7 @@ import OurServices from "@/HomePage/OurServices";
 import UpcomingPrograms from "@/HomePage/UpcomingPrograms";
 import Testimonials from "@/HomePage/Testimonials";
 import Hero from "@/HomePage/Hero";
+import HomepageMessages from "@/components/HomepageMessages";
 import { motion } from "framer-motion";
 
 const pageVariants = {
@@ -35,9 +36,10 @@ const Home = () => {
       exit="exit"
       className="pb-10 md:pb-72"
     >
-     <Hero/>
+      <Hero />
       <LeadPastor />
       <OurServices />
+      <HomepageMessages />
       <UpcomingPrograms />
       <Testimonials />
     </motion.div>
