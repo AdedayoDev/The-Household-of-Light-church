@@ -20,30 +20,30 @@ const cardVariants = {
     y: 0,
     scale: 1,
     transition: {
-      type: "spring",
+      type: "spring" as const,
       damping: 25,
       stiffness: 120,
       duration: 0.8,
     },
   },
-};
+} as const;
 
 const imageVariants = {
   hover: {
     scale: 1.1,
     transition: {
       duration: 0.4,
-      ease: "easeOut",
+      ease: "easeOut" as const,
     },
   },
-};
+} as const;
 
 const buttonVariants = {
   hover: {
     scale: 1.05,
     boxShadow: "0 8px 25px rgba(99, 102, 241, 0.3)",
     transition: {
-      type: "spring",
+      type: "spring" as const,
       stiffness: 400,
       damping: 10,
     },
@@ -51,7 +51,7 @@ const buttonVariants = {
   tap: {
     scale: 0.95,
   },
-};
+} as const;
 
 export default function MessageCard({
   title,
@@ -74,7 +74,7 @@ export default function MessageCard({
       viewport={{ once: true, amount: 0.3 }}
       whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0,0,0,0.15)" }}
       whileTap={{ scale: 0.98 }}
-      className='flex h-[30rem] flex-col rounded-xl border border-slate-200 bg-white p-2 shadow-sm cursor-pointer'
+      className='flex h-[30rem] flex-col rounded-xl border border-slate-200 bg-white p-6 shadow-sm cursor-pointer'
     >
       <div className='overflow-hidden rounded-xl h-[90%]'>
         <motion.img

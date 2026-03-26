@@ -45,7 +45,7 @@ const Footer = () => {
       <div>
         {/* Donate */}
         <div className='md:hidden w-11/12 mx-auto mb-10'>
-          <div className='bg-[#9B28B0] flex flex-col lg:flex-row items-center justify-between px-6 py-8 rounded-2xl shadow-xl gap-8'>
+          <div className='bg-[#FADEFF] flex flex-col lg:flex-row items-center justify-between px-6 py-8 rounded-2xl shadow-xl gap-8'>
             <div className='w-full lg:w-9/12 mx-auto space-y-8'>
               <h2 className='upppercase font-semibold text-2xl md:text-4xl text-black text-center lg:text-left'>
                 PARTNER WITH US TO SPREAD THE GOSPEL
