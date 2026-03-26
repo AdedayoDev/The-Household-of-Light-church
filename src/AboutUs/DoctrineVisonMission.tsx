@@ -1,5 +1,11 @@
 import { motion, type Variants } from "framer-motion";
 
+interface Section {
+  title: string;
+  icon: string;
+  content: string | string[];
+}
+
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
@@ -18,7 +24,7 @@ const itemVariants: Variants = {
 };
 
 const DoctrineVisonMission = () => {
-  const sections = [
+  const sections: Section[] = [
     {
       title: "Our Mission",
       icon: "🎯",
@@ -34,68 +40,112 @@ const DoctrineVisonMission = () => {
     {
       title: "Our Doctrine",
       icon: "📖",
-      content:
-        "We believe in the authority and sufficiency of Scripture, the centrality of Christ, justification by faith, the power of the Holy Spirit, and the transforming grace of God that changes lives.",
+      content: [
+        "The Supremacy of Christ: We believe Jesus Christ is the center of God’s redemptive plan—His death, burial, and resurrection provide salvation, righteousness, and eternal life for all who believe.",
+        "The Supremacy of Christ: We believe Jesus Christ is the center of God’s redemptive plan—His death, burial, and resurrection provide salvation, righteousness, and eternal life for all who believe.",
+        "The Supremacy of Christ: We believe Jesus Christ is the center of God’s redemptive plan—His death, burial, and resurrection provide salvation, righteousness, and eternal life for all who believe.",
+        "The Supremacy of Christ: We believe Jesus Christ is the center of God’s redemptive plan—His death, burial, and resurrection provide salvation, righteousness, and eternal life for all who believe.",
+        "The Supremacy of Christ: We believe Jesus Christ is the center of God’s redemptive plan—His death, burial, and resurrection provide salvation, righteousness, and eternal life for all who believe.",
+      ],
     },
   ];
 
   return (
-    <section className="relative w-full py-16 md:py-24 overflow-hidden">
+    <section className='relative w-full py-16 md:py-24 overflow-hidden'>
       {/* Background */}
-      <div className="absolute inset-0 -z-20">
-        <div className="absolute top-0 right-1/4 w-96 h-96 bg-primary/10 dark:bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/3 left-0 w-96 h-96 bg-accent/10 dark:bg-accent/5 rounded-full blur-3xl" />
+      <div className='absolute inset-0 -z-20'>
+        <div className='absolute top-0 right-1/4 w-96 h-96 bg-primary/10 dark:bg-primary/5 rounded-full blur-3xl' />
+        <div className='absolute bottom-1/3 left-0 w-96 h-96 bg-accent/10 dark:bg-accent/5 rounded-full blur-3xl' />
       </div>
 
       <motion.div
-        className="w-10/12 mx-auto flex flex-col items-center justify-center space-y-12"
+        className='w-10/12 mx-auto flex flex-col items-center justify-center space-y-12'
         variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
+        initial='hidden'
+        whileInView='visible'
         viewport={{ once: false, amount: 0.3 }}
       >
         {/* Header */}
-        <motion.div variants={itemVariants} className="text-center space-y-4 max-w-2xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 dark:bg-accent/10 rounded-full border border-primary/20 dark:border-accent/20">
-            <span className="w-2 h-2 bg-primary dark:bg-accent rounded-full" />
-            <span className="text-xs font-semibold text-primary dark:text-accent uppercase">
+        <motion.div
+          variants={itemVariants}
+          className='text-center space-y-4 max-w-2xl'
+        >
+          <div className='inline-flex items-center gap-2 px-3 py-1 bg-primary/10 dark:bg-accent/10 rounded-full border border-primary/20 dark:border-accent/20'>
+            <span className='w-2 h-2 bg-primary dark:bg-accent rounded-full' />
+            <span className='text-xs font-semibold text-primary dark:text-accent uppercase'>
               Foundation
             </span>
           </div>
-          <h2 className="heading-2 heading-gradient dark:text-white">
+          <h2 className='heading-2 heading-gradient dark:text-white'>
             Mission, Vision & Doctrine
           </h2>
         </motion.div>
 
-        {/* Cards Grid */}
-        <motion.div
-          variants={containerVariants}
-          className="w-full grid grid-cols-1 md:grid-cols-3 gap-6"
-        >
-          {sections.map((section) => (
+        {/* Doctrine Card */}
+        {sections
+          .filter((s) => s.title === "Our Doctrine")
+          .map((section) => (
             <motion.div
               key={section.title}
               variants={itemVariants}
-              className="group relative"
+              className='group relative w-full'
             >
-              <div className="h-full p-8 rounded-xl border border-border dark:border-primary/20 bg-background dark:bg-muted hover:border-primary dark:hover:border-accent shadow-sm hover:shadow-lg dark:hover:shadow-primary/10 transition-all duration-300 space-y-4">
-                {/* Icon */}
-                <div className="text-5xl group-hover:scale-110 transition-transform">
-                  {section.icon}
+              <div>
+                <div className='h-full p-8 rounded-xl border border-border dark:border-primary/20 bg-primary/10 dark:bg-accent/10 hover:border-primary dark:hover:border-accent shadow-sm hover:shadow-lg dark:hover:shadow-primary/10 transition-all duration-300 space-y-4'>
+                  {/* Icon */}
+                  <div className='text-5xl group-hover:scale-110 transition-transform'>
+                    {section.icon}
+                  </div>
+
+                  {/* Title */}
+                  <h3 className='heading-4 text-foreground dark:text-accent'>
+                    {section.title}
+                  </h3>
+
+                  {/* Content */}
+                  <ul className='list-disc list-inside space-y-2 body-base text-foreground/70 dark:text-accent/80 leading-relaxed'>
+                    {(section.content as string[]).map(
+                      (item: string, idx: number) => (
+                        <li key={idx}>{item}</li>
+                      ),
+                    )}
+                  </ul>
                 </div>
-
-                {/* Title */}
-                <h3 className="heading-4 text-foreground dark:text-accent">
-                  {section.title}
-                </h3>
-
-                {/* Content */}
-                <p className="body-base text-foreground/70 dark:text-accent/80 leading-relaxed">
-                  {section.content}
-                </p>
               </div>
             </motion.div>
           ))}
+
+        {/* Other Cards Grid */}
+        <motion.div
+          variants={containerVariants}
+          className='w-full grid grid-cols-1 md:grid-cols-2 gap-6'
+        >
+          {sections
+            .filter((s) => s.title !== "Our Doctrine")
+            .map((section) => (
+              <motion.div
+                key={section.title}
+                variants={itemVariants}
+                className='group relative'
+              >
+                <div className='h-full p-8 rounded-xl border border-border dark:border-primary/20 bg-background dark:bg-muted hover:border-primary dark:hover:border-accent shadow-sm hover:shadow-lg dark:hover:shadow-primary/10 transition-all duration-300 space-y-4'>
+                  {/* Icon */}
+                  <div className='text-5xl group-hover:scale-110 transition-transform'>
+                    {section.icon}
+                  </div>
+
+                  {/* Title */}
+                  <h3 className='heading-4 text-foreground dark:text-accent'>
+                    {section.title}
+                  </h3>
+
+                  {/* Content */}
+                  <p className='body-base text-foreground/70 dark:text-accent/80 leading-relaxed'>
+                    {section.content}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
         </motion.div>
       </motion.div>
     </section>

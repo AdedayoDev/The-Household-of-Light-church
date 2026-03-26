@@ -98,7 +98,7 @@ const LeadPastor: FC<LeadPastorProps> = ({
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 dark:bg-accent/10 rounded-full border border-primary/20 dark:border-accent/20">
               <span className="w-2 h-2 bg-primary dark:bg-accent rounded-full animate-pulse" />
               <span className="text-xs font-semibold text-primary dark:text-accent uppercase">
-                Meet our leader
+                Meet our pastor
               </span>
             </div>
           </motion.div>
@@ -114,35 +114,12 @@ const LeadPastor: FC<LeadPastorProps> = ({
           {/* Description */}
           <motion.div className="space-y-4" variants={containerVariants}>
             <motion.p variants={itemVariants} className="body-lg text-foreground/70 dark:text-accent/80">
-              Pastor Ipaye Isaac is a passionate minister of the Gospel, deeply committed to unveiling
-              the revelation of Christ in His fullness. With a burning desire to see believers grow beyond
-              religion into true spiritual understanding, Pastor Isaac teaches with simplicity, accuracy, and the power of the Holy Spirit.
+              Pastor Ipaye Isaac is a passionate minister of the Gospel, committed to unveiling the revelation of Christ and raising believers into the full stature of who they are in Him. Known for his clarity of teaching, depth of understanding, and strong alignment with the Scriptures, he carries a unique grace to illuminate the finished works of Christ and bring men into maturity.
             </motion.p>
 
             <motion.p variants={itemVariants} className="body-lg text-foreground/70 dark:text-accent/80">
-              His mission is to raise believers into the full stature and likeness of Christ, helping
-              them understand God's completed work and walk in the victory that is theirs in Jesus.
+              Driven by a burning desire to see believers grow beyond religion into true spiritual understanding, Pastor Isaac teaches with simplicity, accuracy, and the power of the Spirit. His ministry is marked by a strong emphasis on identity in Christ, spiritual growth, sound doctrine, and the practical expression of God’s love.
             </motion.p>
-          </motion.div>
-
-          {/* Key Points */}
-          <motion.div variants={containerVariants} className="space-y-3 pt-2">
-            {[
-              "Teaching with simplicity and clarity",
-              "Raising believers in spiritual maturity",
-              "Unveiling the full revelation of Christ",
-            ].map((point) => (
-              <motion.div
-                key={point}
-                variants={itemVariants}
-                className="flex items-center gap-3"
-              >
-                <div className="w-2 h-2 rounded-full bg-linear-to-r from-primary to-accent shrink-0" />
-                <span className="body-base text-foreground/80 dark:text-accent/80">
-                  {point}
-                </span>
-              </motion.div>
-            ))}
           </motion.div>
 
           {/* CTA Button */}

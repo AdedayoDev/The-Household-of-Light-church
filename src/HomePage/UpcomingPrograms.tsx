@@ -75,7 +75,8 @@ const UpcomingPrograms: React.FC = () => {
               variants={textVariants}
               className="body-lg text-foreground/70 dark:text-accent/80 leading-relaxed max-w-lg"
             >
-              Join us for a powerful special meeting designed to stir your faith, deepen your understanding of Christ, and position you for divine alignment. It will be a time of worship, teaching, and impartation—an atmosphere where the Spirit of God brings clarity, strength, and transformation.
+             Join us for a powerful special meeting designed to stir your faith, deepen your understanding of Christ, and position you for divine alignment. It will be a time of worship, teaching, and impartation—an atmosphere where the Spirit of God brings clarity, strength, and transformation.
+            Come expectant. Come ready. Something is about to shift in your life.
             </motion.p>
 
             {/* Call to Action Text */}

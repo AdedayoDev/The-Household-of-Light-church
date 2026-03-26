@@ -11,8 +11,7 @@ export default function HomepageMessages() {
         <div className="space-y-2 text-center">
           <h2 className="heading-2">Latest Messages</h2>
           <p className="text-muted-foreground">
-            Explore a few of our most recent sermons. Want to see more? Jump into the full
-            library.
+           Stay nourished in the Word with our latest sermon. Each message is filled with clarity, revelation, and sound teaching to help you grow in the knowledge of Christ. Watch, listen, and be strengthened as you continue your journey in Him.
           </p>
         </div>
 

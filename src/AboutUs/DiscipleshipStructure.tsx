@@ -25,12 +25,6 @@ const DiscipleshipStructure = () => {
       subtitle: "Getting Started in Christ",
       description:
         "Our Membership Class introduces you to the foundation of our faith, the values we uphold, and what it means to be part of our church family. It’s a simple, welcoming step that helps you understand who we are and how you can grow, belong, and serve with us.",
-      focuses: [
-        "What every believer should know",
-        "Evangelism and Discipleship ",
-        "Bible Interepretation",
-        "Prayer",
-      ],
       icon: "🌱",
       color: "from-primary to-primary/70",
     },
@@ -38,8 +32,7 @@ const DiscipleshipStructure = () => {
       level: "02",
       title: "Workforce Training School",
       subtitle:
-        "Our Workforce Training School equips volunteers with the knowledge and skills needed to serve effectively. It’s a simple, practical training that prepares you to serve with excellence, commitment, and a clear understanding of ministry.",
-      focuses: ["Ministry", "Service in the church"],
+        "Our Workforce Training School equips volunteers with the knowledge and skills needed to serve effectively. It’s a simple, practical training that prepares you to serve with excellence, commitment, and a clear understanding of ministry. ",
       icon: "🌿",
       color: "from-primary/80 to-accent",
     },
@@ -48,12 +41,6 @@ const DiscipleshipStructure = () => {
       title: "Bible School",
       subtitle:
         "Our Bible School helps believers grow deeper in the knowledge of Scripture. Through clear, structured teaching, you’ll gain a stronger foundation in the Word and learn how to apply it to everyday life.",
-      focuses: [
-        "In-depth Bible study",
-        "Exegesis and Hermeneutics",
-        "Biblical interpretation",
-        "Theology",
-      ],
       icon: "🌳",
       color: "from-accent to-accent/70",
     },
@@ -62,12 +49,6 @@ const DiscipleshipStructure = () => {
       title: "Leadership School",
       subtitle:
         "Our Leadership School equips believers to lead with vision, character, and Christlike influence. It’s a simple, practical training that prepares you to serve, guide, and impact others effectively in ministry and beyond.",
-      focuses: [
-        "Leadership principles",
-        "Character development",
-        "Servant leadership",
-        "Mentorship and discipleship",
-      ],
       icon: "🌴",
       color: "from-accent to-accent/70",
     },
@@ -100,7 +81,7 @@ const DiscipleshipStructure = () => {
             Our Discipleship Structure
           </h2>
           <p className='body-lg text-gray-600 dark:text-accent/80'>
-            Three levels of spiritual maturity and kingdom impact
+           Our discipleship structure is built to help believers grow steadily in the knowledge of Christ. Through guided teachings, small groups, and intentional mentorship, we equip believers to mature spiritually and live out the realities of God’s Word. Our goal is simple—raising grounded disciples who know Christ, walk in the Spirit, and reflect His life daily.
           </p>
         </motion.div>
 
@@ -128,7 +109,7 @@ const DiscipleshipStructure = () => {
                     </div>
                     <div>
                       <p className='text-sm font-semibold text-primary dark:text-accent uppercase tracking-wider'>
-                        Level {item.level}
+                         {item.level}
                       </p>
                       <h3 className='heading-3 text-foreground dark:text-white'>
                         {item.title}
@@ -144,23 +125,6 @@ const DiscipleshipStructure = () => {
                     {item.description}
                   </p>
 
-                  <div className='space-y-2 pt-2'>
-                    <p className='text-xs font-semibold text-foreground dark:text-accent/90 uppercase'>
-                      Key Focus Areas
-                    </p>
-                    <ul className='grid grid-cols-2 gap-2'>
-                      {item.focuses.map((focus) => (
-                        <li key={focus} className='flex items-center gap-2'>
-                          <div
-                            className={`w-1.5 h-1.5 rounded-full bg-linear-to-r ${item.color} shrink-0`}
-                          />
-                          <span className='text-sm text-foreground/60 dark:text-accent/70'>
-                            {focus}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
                 </div>
               </div>
 
@@ -207,23 +171,6 @@ const DiscipleshipStructure = () => {
               </div>
             </motion.div>
           ))}
-        </motion.div>
-
-        {/* Progression Info */}
-        <motion.div
-          variants={itemVariants}
-          className='w-full max-w-3xl p-8 md:p-10 bg-linear-to-r from-primary/5 to-accent/5 dark:from-primary/10 dark:to-accent/10 border border-primary/20 dark:border-accent/20 rounded-xl'
-        >
-          <h3 className='heading-4 text-foreground dark:text-accent mb-4 text-center'>
-            Your Spiritual Journey
-          </h3>
-          <p className='body-base text-foreground/70 dark:text-accent/80 text-center'>
-            Each level builds upon the previous, creating a strong spiritual
-            foundation. There's no timeline—everyone grows at their own pace
-            under the Holy Spirit's guidance. We provide mentorship, community,
-            and resources at every stage to help you flourish in Christ and
-            become a multiplier of faith.
-          </p>
         </motion.div>
       </motion.div>
     </section>

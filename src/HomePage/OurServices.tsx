@@ -78,7 +78,7 @@ const OurServices: React.FC = () => {
           {/* Header */}
           <motion.div
             variants={headerVariants}
-            className="text-center space-y-6 max-w-3xl"
+            className="text-center space-y-6 max-w-5xl"
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 dark:bg-primary/10 rounded-full border border-primary/30 dark:border-primary/40">
               <span className="w-2 h-2 bg-primary dark:bg-accent rounded-full animate-pulse" />
@@ -92,7 +92,7 @@ const OurServices: React.FC = () => {
             </h2>
 
             <p className="body-lg text-foreground/70 dark:text-accent/80 leading-relaxed">
-              Our services are centered on worship, the Word, and spiritual growth. Each gathering helps believers understand Christ better and walk in all God has accomplished for them. Join us to experience clarity, fellowship, and transformation in His presence
+             Our services are centered on worship, the Word, and spiritual growth. Each gathering helps believers understand Christ better and walk in all God has accomplished for them. Join us to experience clarity, fellowship, and transformation in His presence.
             </p>
           </motion.div>
 

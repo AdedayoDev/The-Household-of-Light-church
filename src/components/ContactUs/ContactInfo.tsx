@@ -113,7 +113,7 @@ const ContactInfo = () => {
         </motion.div>
 
         {/* Map Placeholder */}
-        <motion.div
+        {/* <motion.div
           variants={itemVariants}
           className="w-full h-80 rounded-xl border border-border dark:border-primary/20 bg-gradient-to-br from-primary/10 to-accent/10 dark:from-primary/5 dark:to-accent/5 overflow-hidden"
         >
@@ -125,7 +125,7 @@ const ContactInfo = () => {
             allowFullScreen
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.2219901290355!2d-74.00601692346036!3d40.71284097138067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a27aad927a7%3A0x56b26d40af7b1d10!2sChurch!5e0!3m2!1sen!2sus!4v1234567890"
           />
-        </motion.div>
+        </motion.div> */}
       </motion.div>
     </section>
   );

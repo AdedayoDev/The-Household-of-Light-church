@@ -9,7 +9,7 @@ const rawMessages = [
   {
     title: "A LITTLE DISCUSSION ON SPIRITUAL GROWTH",
     link: "https://mega.nz/folder/CwRg0DxJ#mjFz8voZG1QFizWO1RRO_w",
-    image: "/bible-interpretatioin.png",
+    image: "/a little discussion on spiritual growth.jpeg",
   },
   {
     title: "A LITTLE GIST ABOUT MARITAL RELATIONSHIP",
@@ -19,7 +19,7 @@ const rawMessages = [
   {
     title: "A SHORT EXHORTATION ON POWER",
     link: "https://mega.nz/folder/Tp5AzQzJ#xVF75lZW3hkh3ZgTae8qfQ",
-    image: "/bible-interpretatioin.png",
+    image: "/a short exhortation on power.jpeg",
   },
   {
     title: "ABOUT MINISTRY",
@@ -34,17 +34,17 @@ const rawMessages = [
   {
     title: "ACCESS TO GOD - THE REALITY OF A BELIEVER",
     link: "https://mega.nz/folder/v1owGDxb#uZVD7dDVh9NoqtZjDtk1Vg",
-    image: "/bible-interpretatioin.png",
+    image: "/access to God the reality of the believer.jpeg",
   },
   {
     title: "ASSOCIATION",
     link: "https://mega.nz/folder/30RkzLBZ#TUMHuEV0FVFJlHX9I-3fuw",
-    image: "/bible-interpretatioin.png",
+    image: "/association.jpeg",
   },
   {
     title: "BE A GOOD EXAMPLE",
     link: "https://mega.nz/folder/y9xDhbaT#bauiy4qk-Qn_FODUBU-trg",
-    image: "/bible-interpretatioin.png",
+    image: "/be a good example.jpeg",
   },
   {
     title: "BE FILLED",
@@ -62,24 +62,24 @@ const rawMessages = [
     image: "/bible-interpretatioin.png",
   },
   {
-    title: "BELIEVERS' CONFERENCE'23",
+    title: "believers' conference 2023.jpeg",
     link: "https://mega.nz/folder/Dlhz3Yga#oO5sWrsrYSLTceqnzEkvbw",
     image: "/bible-interpretatioin.png",
   },
   {
     title: "BEWARE OF MATERIALISM",
     link: "https://mega.nz/folder/Cwhn0ILb#_ct6lTKdHUEOcgKYhiHegw",
-    image: "/bible-interpretatioin.png",
+    image: "/beware of materialism.jpeg",
   },
   {
     title: "BIBLE INTERPRETATION",
     link: "https://mega.nz/folder/m8hDGITK#ip1wlIXPr11Y-YbSQ4Pamg",
-    image: "/bible-interpretatioin.png",
+    image: "/bible interpretation.jpeg",
   },
   {
     title: "BIBLE SCHOOL 2020",
     link: "https://mega.nz/folder/rpxhGaRQ#-A8HeXCMVueHi_oeUYlE0g",
-    image: "/bible-interpretatioin.png",
+    image: "/bible school.jpeg",
   },
   {
     title: "BROTHERLY LOVE",
@@ -94,7 +94,7 @@ const rawMessages = [
   {
     title: "CHARGE FOR MINISTRY",
     link: "https://mega.nz/folder/qx4ngJoa#yZQo0BLdhpahU-RiRjp7IQ",
-    image: "/bible-interpretatioin.png",
+    image: "/charge for ministry.jpeg",
   },
   {
     title: "CHRIST IN ME, THE HOPE OF GLORY",
@@ -104,7 +104,7 @@ const rawMessages = [
   {
     title: "CHRIST'S GIFTS TO HIS CHURCH",
     link: "https://mega.nz/folder/ntgEjLzI#75O2On91eB6R17LM7jt98A",
-    image: "/bible-interpretatioin.png",
+    image: "/christ's gift to his church.jpeg",
   },
   {
     title: "CHRISTIAN GIVING",
@@ -114,7 +114,7 @@ const rawMessages = [
   {
     title: "CHURCH",
     link: "https://mega.nz/folder/i0x1jIJJ#oXm4f9PpJCx8nvjJOqH9tw",
-    image: "/bible-interpretatioin.png",
+    image: "/church.jpeg",
   },
   {
     title: "CONCERNING MARITALS",
@@ -144,7 +144,7 @@ const rawMessages = [
   {
     title: "DOES GOD VISIT THE FATHER'S SINS ON THE CHILDREN",
     link: "https://mega.nz/folder/G9QiCDxD#Vlk9p1l8g2nhJ2QkJfZNQQ",
-    image: "/bible-interpretatioin.png",
+    image: "/does god visit the iniquities of the father on the son.jpeg",
   },
   {
     title: "DOING THE WORKS OF JESUS",
@@ -159,12 +159,12 @@ const rawMessages = [
   {
     title: "ENABLED TO DO",
     link: "https://mega.nz/folder/W8I2DDBb#Fo3JPRr73NS0d3xWqcF3pQ",
-    image: "/bible-interpretatioin.png",
+    image: "/enabled to do.jpeg",
   },
   {
     title: "ENRICHED IN CHRIST",
     link: "https://mega.nz/folder/LthE1YTa#e6zHKjGtirO2defO0Xg90g",
-    image: "/bible-interpretatioin.png",
+    image: "/enriched in christ.jpeg",
   },
   {
     title: "EVANGELISM AND DISCIPLESHIP",
@@ -174,27 +174,27 @@ const rawMessages = [
   {
     title: "EXPOSITION ON 1 CORINTHIANS 5 VS 5",
     link: "https://mega.nz/folder/jgY1GSTD#ZRbYlVqWctoMdDT40BDJRg",
-    image: "/bible-interpretatioin.png",
+    image: "/exposition on 1 corinthians 5.jpeg",
   },
   {
     title: "EXPOSITION ON 2 PETER CHAPTER 2",
     link: "https://mega.nz/folder/GtRTFTgK#ZZp4w1H6-tAgTgdjGucfww",
-    image: "/bible-interpretatioin.png",
+    image: "/exposition on 2 peter 2.jpeg",
   },
   {
     title: "EXPOSITION ON EPHESIANS 1 VS 3",
     link: "https://mega.nz/folder/jsIHGCja#nsMDPdX7bxHffy38EuZqkQ",
-    image: "/bible-interpretatioin.png",
+    image: "/exposition on ephesian 1-3.jpeg",
   },
   {
     title: "EXPOSITION ON GENESIS 2 VS 16-17",
     link: "https://mega.nz/folder/y5xSiLob#S7QZ-IxtjAgOxOS7AaZ7aQ",
-    image: "/bible-interpretatioin.png",
+    image: "/exposition on Genesis 2.jpeg",
   },
   {
     title: "EXPOSITION ON HEBREW 12 VS 14",
     link: "https://mega.nz/folder/XhQWQSdJ#HXAgqIfykijHVu02S05bcw",
-    image: "/bible-interpretatioin.png",
+    image: "/exposition on hebrew 12.jpeg",
   },
   {
     title: "EXPOSITION ON JOHN 14",
@@ -204,12 +204,12 @@ const rawMessages = [
   {
     title: "EXPOSITION ON MATTHEW 17 VS 27",
     link: "https://mega.nz/folder/DpR1TBI#xcXViVF5ZQBAfEP0zxYxxQ",
-    image: "/bible-interpretatioin.png",
+    image: "/exposition on matthew 17.jpeg",
   },
   {
     title: "EXPOSITION ON ROMAN 8 VS 8-9",
     link: "https://mega.nz/folder/WgA2Q8Lk#ysrEpYqg1yNSYdeCGOcH",
-    image: "/bible-interpretatioin.png",
+    image: "/exposition on romans 8.jpeg",
   },
   {
     title: "FAITH BEYOND EMOTIONS",
@@ -224,12 +224,12 @@ const rawMessages = [
   {
     title: "FAITH FOR THE IMPOSSIBLE",
     link: "https://mega.nz/folder/20hXUQbK#IjRzpKKxhEBQ3IJcXAVXxQ",
-    image: "/bible-interpretatioin.png",
+    image: "/faith for the impossilbe.jpeg",
   },
   {
     title: "FAITH OVER FEAR",
     link: "https://mega.nz/folder/b4I1iSKZ#zwF4pN8PWttEdw7IVP9-pA",
-    image: "/bible-interpretatioin.png",
+    image: "/faith over fear.jpeg",
   },
   {
     title: "FIVE HELPFUL TIPS FOR BIBLE INTERPRETATION",
@@ -239,7 +239,7 @@ const rawMessages = [
   {
     title: "GOD WANTS YOU TO PROSPER SERIES",
     link: "https://mega.nz/folder/GpxX3ChC#2NA_rHXOLqiGQn6fDgMI9Q",
-    image: "/bible-interpretatioin.png",
+    image: "/god want you to prosper.jpeg",
   },
   {
     title: "GOD'S EVERLASTING LOVE",
@@ -249,7 +249,7 @@ const rawMessages = [
   {
     title: "GOD'S PLAN FOR MAN",
     link: "https://mega.nz/folder/Px4GiC4Z#YLo-k06N1v2EOwlyKNg0cw",
-    image: "/bible-interpretatioin.png",
+    image: "/God's plan for man.jpeg",
   },
   {
     title: "GOD'S VOICE",
@@ -259,7 +259,7 @@ const rawMessages = [
   {
     title: "GRACE AND MERCY",
     link: "https://mega.nz/folder/GwgV1YTa#pCgOzrkHwC1djXRJC4eBug",
-    image: "/bible-interpretatioin.png",
+    image: "/grace and mercy.jpeg",
   },
   {
     title: "GROW IN GRACE",
@@ -279,17 +279,17 @@ const rawMessages = [
   {
     title: "HEALING CONFERENCE 2020",
     link: "https://mega.nz/folder/uhgVnISS#2gziRtqS8T0QzLDQ3gFvQ",
-    image: "/bible-interpretatioin.png",
+    image: "/healing conference 2020.jpeg",
   },
   {
     title: "HEALING CONFERENCE 2021",
     link: "https://mega.nz/folder/roIiRY7a#YAfqO84UVKep2Z3XZYC1w",
-    image: "/bible-interpretatioin.png",
+    image: "/healing conference 2021.jpeg",
   },
   {
     title: "HEARING GOD'S VOICE",
     link: "https://mega.nz/folder/C4gBQa6b#da1LyWcRp5VJC3au14Qj24",
-    image: "/bible-interpretatioin.png",
+    image: "/hearing god's voice.jpeg",
   },
   {
     title: "HOLY GHOST PARTY",
@@ -299,27 +299,27 @@ const rawMessages = [
   {
     title: "HONOUR",
     link: "https://mega.nz/folder/a8hAgLxR#4CgPDDxNSMf3za6d62DmCQ",
-    image: "/bible-interpretatioin.png",
+    image: "/honour.jpeg",
   },
   {
     title: "HOW TO VIEW THE SCRIPTURES",
     link: "https://mega.nz/folder/u14xDLIJ#dX4XPSo_aNykd8scjfrpvA",
-    image: "/bible-interpretatioin.png",
+    image: "/how to view the scripture.jpeg",
   },
   {
     title: "I WILL SERVE THE LORD",
     link: "https://mega.nz/folder/nhRxjDCI#AH_yeUFvCiCIOsiG5JdDRQ",
-    image: "/bible-interpretatioin.png",
+    image: "/i will serve the lord.jpeg",
   },
   {
     title: "IN CHRIST",
     link: "https://mega.nz/folder/7xoWDZaC#AlpA7YgXrR_A9XwhSiMYdA",
-    image: "/bible-interpretatioin.png",
+    image: "/in christ.jpeg",
   },
   {
     title: "IN CHRIST (2)",
     link: "https://mega.nz/folder/z8QDhCYJ#fzCXtWsZ7Ek4afW1B348MQ",
-    image: "/bible-interpretatioin.png",
+    image: "/in christ.jpeg",
   },
   {
     title: "JOY",
@@ -329,12 +329,12 @@ const rawMessages = [
   {
     title: "LEADERSHIP SCHOOL",
     link: "https://mega.nz/folder/i5oVnIAI#fQ9nI4Y0Gbs7TrBV7wHt3A",
-    image: "/bible-interpretatioin.png",
+    image: "/leadership school 1.jpeg",
   },
   {
     title: "LEADERSHIP SCHOOL 2",
     link: "https://mega.nz/folder/vkBSHJbZ#hswPOBmTY0kcmLglav7TRQ",
-    image: "/bible-interpretatioin.png",
+    image: "/leadership school 2.jpeg",
   },
   {
     title: "LESSONS FROM MATTHEW 5-7",
@@ -349,7 +349,7 @@ const rawMessages = [
   {
     title: "LET THE SCRIPTURE BE SEEN IN YOU",
     link: "https://mega.nz/folder/aoJnHYyA#48taYoRQdOA-SsRZTXXMOw",
-    image: "/bible-interpretatioin.png",
+    image: "/let the scripture be seen in you.jpeg",
   },
   {
     title: "LOVE RELATIONSHIP AND MARRIAGE",
@@ -364,12 +364,12 @@ const rawMessages = [
   {
     title: "MAKING THE MOST OF MEETINGS",
     link: "https://mega.nz/folder/X842BAzD#98NP6OqHZEqqaMEUuqFhcw",
-    image: "/bible-interpretatioin.png",
+    image: "/making most of meetings.jpeg",
   },
   {
     title: "MAKING THE MOST OF MEETINGS 2.",
     link: "https://mega.nz/folder/mo5DXbKQ#cKwckQgno1Bt5GF8Ghh-sw",
-    image: "/bible-interpretatioin.png",
+    image: "/making most of meetings.jpeg",
   },
   {
     title: "MELCHIZEDEK",
@@ -384,7 +384,7 @@ const rawMessages = [
   {
     title: "OUR UNION WITH CHRIST",
     link: "https://mega.nz/folder/PtJ33ADL#XGAks3nyM45NY7ti_4VlPA",
-    image: "/bible-interpretatioin.png",
+    image: "/our union with christ.jpeg",
   },
   {
     title: "PASTOR'S CHARGE",
@@ -394,12 +394,12 @@ const rawMessages = [
   {
     title: "PNEUMATIKOS SERIES 1",
     link: "https://mega.nz/folder/6l40GRQA#bw7P0Vx2YxtO27W-4eGnPA",
-    image: "/bible-interpretatioin.png",
+    image: "/pneumatikos.jpeg",
   },
   {
     title: "PNEUMATIKOS SERIES 2",
     link: "https://mega.nz/folder/fpZjSRaD#KoZjH8YVxT5S1_CYvfI8tw",
-    image: "/bible-interpretatioin.png",
+    image: "/pneumatikos.jpeg",
   },
   {
     title: "PRAYER CONFERENCE 2023",
@@ -409,7 +409,7 @@ const rawMessages = [
   {
     title: "PRAYER SERIES",
     link: "https://mega.nz/folder/GxIm2S6R#Ohflb7DvPhcVfAdAXtJCSw",
-    image: "/bible-interpretatioin.png",
+    image: "/prayer series.jpeg",
   },
   {
     title: "PRAYING IN THE SPIRIT",
@@ -419,7 +419,7 @@ const rawMessages = [
   {
     title: "PRESERVED IN CHRIST",
     link: "https://mega.nz/folder/WwhFXaoQ#h-s4gofXLwD5u14Q-CH5jw",
-    image: "/bible-interpretatioin.png",
+    image: "/preserved in christ.jpeg",
   },
   {
     title: "PRIORITIZING GOD'S WORD.",
@@ -439,17 +439,17 @@ const rawMessages = [
   {
     title: "SALVATION SERIES 1",
     link: "https://mega.nz/folder/71IyzRaI#e8mTZm1_QJDew2oHZdAvXg",
-    image: "/bible-interpretatioin.png",
+    image: "/salvation series 1.jpeg",
   },
   {
     title: "SALVATION SERIES 2",
     link: "https://mega.nz/folder/i4R0TI7D#r0v2bjWuRJhZu6pWpQAuyw",
-    image: "/bible-interpretatioin.png",
+    image: "/salvation series 2.jpeg",
   },
   {
     title: "SALVATION SERIES 3",
     link: "https://mega.nz/folder/PpxixLTb#zL72pLxxxAAkroC3VvS-Zg",
-    image: "/bible-interpretatioin.png",
+    image: "/salvation series 3.jpeg",
   },
   {
     title: "SALVATION SERIES 4",
@@ -474,27 +474,27 @@ const rawMessages = [
   {
     title: "SOME ADMONITIONS",
     link: "https://mega.nz/folder/esBXhaIa#2OBCGoOlhJb-TZyIPDthmA",
-    image: "/bible-interpretatioin.png",
+    image: "/some admonitions.jpeg",
   },
   {
     title: "SOMETHING TO JOY ABOUT",
     link: "https://mega.nz/folder/74hVBQSB#0mJ9AkoGIqDId8D8G_38bw",
-    image: "/bible-interpretatioin.png",
+    image: "/something to joy about.jpeg",
   },
   {
     title: "SOUL WINNING",
     link: "https://mega.nz/folder/HkhS1QLZ#HQuEBxtkNpym62BdTac7fw",
-    image: "/bible-interpretatioin.png",
+    image: "/soul winning.jpeg",
   },
   {
     title: "SOUL WINNING CONFERENCE 2022",
     link: "https://mega.nz/folder/6kx0BLBT#gDfiFLvKy-yqWn607FUtcg",
-    image: "/bible-interpretatioin.png",
+    image: "/soul winning conference 2022.jpeg",
   },
   {
     title: "SOUL WINNING CONFERENCE 2023",
     link: "https://mega.nz/folder/nlARxY6H#Z3NZOhuAe6YhCQRwCec_3Q",
-    image: "/bible-interpretatioin.png",
+    image: "/soul winning conference 2023.jpeg",
   },
   {
     title: "SPECIAL QUESTION AND ANSWER SESSION",
@@ -504,17 +504,17 @@ const rawMessages = [
   {
     title: "STANDING FOR THE TRUTH OF GOD'S WORD",
     link: "https://mega.nz/folder/a9BV3B4A#qBCzG0SYaqbgr_mbJh9EgA",
-    image: "/bible-interpretatioin.png",
+    image: "/standing for the truth of God's word.jpeg",
   },
   {
     title: "STAYING CONSCIOUS OF THE SPIRIT",
     link: "https://mega.nz/folder/zgQ3DBBZ#MO_r_1hbx6iq4n-IdRVwQA",
-    image: "/bible-interpretatioin.png",
+    image: "/staying conscious of god's spirit.jpeg",
   },
   {
     title: "STAYING CONSISTENT",
     link: "https://mega.nz/folder/D05yHZLZ#CzFyzJjvsjLlzlfBhrOdbQ",
-    image: "/bible-interpretatioin.png",
+    image: "/staying consistent.jpeg",
   },
   {
     title: "SUPERNATURAL CONFERENCE'2022",
@@ -524,7 +524,7 @@ const rawMessages = [
   {
     title: "SWEET HOUR OF PRAYER",
     link: "https://mega.nz/folder/69oTHYiA#R0uzZjWh0QR0sr17Bk469Q",
-    image: "/bible-interpretatioin.png",
+    image: "/sweet hour of prayer.jpeg",
   },
   {
     title: "TAKE HEED",
@@ -539,22 +539,22 @@ const rawMessages = [
   {
     title: "THAT THE BELIEVER CARRIES GOD",
     link: "https://mega.nz/folder/aspDlI5S#lWS_JO0pAtaRUcIp8yRfeg",
-    image: "/bible-interpretatioin.png",
+    image: "/that the believer carry's god.jpeg",
   },
   {
     title: "THE BELIEVER - AN ANSWER TO THE WORLD PROBLEM",
     link: "https://mega.nz/folder/eppj3ARI#TwEewJHHZIg89eyI-rdECQ",
-    image: "/bible-interpretatioin.png",
+    image: "/the believer is the answer to the world's problem.jpeg",
   },
   {
     title: "THE ABILITY OF THE SPIRIT IN THE BELIEVER",
     link: "https://mega.nz/folder/GpgGySCK#ut9MA2wU2m5ETSKR9tRqmg",
-    image: "/bible-interpretatioin.png",
+    image: "/the abilities of the spirit in the believer.jpeg",
   },
   {
     title: "THE ADVANTAGE OF THE BELIEVER",
     link: "https://mega.nz/folder/zoBQ2LZI#KQs143wGbQyMAWq_asVvA",
-    image: "/bible-interpretatioin.png",
+    image: "/the advantage of the believer.jpeg",
   },
   {
     title: "THE ART OF FOLLOWING",
@@ -564,17 +564,17 @@ const rawMessages = [
   {
     title: "THE BELIEVER'S IDENTITY",
     link: "https://mega.nz/folder/KkIVGIKS#hk8xdrVfNoChdb2POqevYw",
-    image: "/bible-interpretatioin.png",
+    image: "/the believers identity.jpeg",
   },
   {
     title: "THE BIBLICAL PERSPECTIVE ON MARRIAGE",
     link: "https://mega.nz/folder/jpJg3apR#37jWNx4_iMt_5j6EJ-8PcA",
-    image: "/bible-interpretatioin.png",
+    image: "/the biblical perspective of marriage.jpeg",
   },
   {
     title: "THE BOOK OF JUDE",
     link: "https://mega.nz/folder/ikhXVQLZ#cHCZPstd0hcFVD1uziKZqQ",
-    image: "/bible-interpretatioin.png",
+    image: "/the book of jude.jpeg",
   },
   {
     title: "THE COMPELLING POWER",
@@ -584,7 +584,7 @@ const rawMessages = [
   {
     title: "THE CONDUCT OF THE BELIEVER",
     link: "https://mega.nz/folder/zwZABKCL#mf_8jlwV9bQwTUcTvQefAg",
-    image: "/bible-interpretatioin.png",
+    image: "/the conduct of the believer.jpeg",
   },
   {
     title: "THE DESIRE FOR MORE",
@@ -594,12 +594,12 @@ const rawMessages = [
   {
     title: "THE ETERNAL LIFE OF CHRIST",
     link: "https://mega.nz/folder/3h4yESYK#mQ6q9X01KvUZUrFh0sgAGQ",
-    image: "/bible-interpretatioin.png",
+    image: "/the eternal life of christ.jpeg",
   },
   {
     title: "THE FIRE OF THE SPIRIT",
     link: "https://mega.nz/folder/3kAmkRKT#2A15OHpO5cytpM_7jK-zxQ",
-    image: "/bible-interpretatioin.png",
+    image: "/the fire of the spirit.jpeg",
   },
   {
     title: "THE GENEROSITY OF THE BELIEVER",
@@ -614,7 +614,7 @@ const rawMessages = [
   {
     title: "THE LIFE OF A MINISTER",
     link: "https://mega.nz/folder/uhRAjTgD#29_V1KYEbMjaTVMjbwGvH_Q",
-    image: "/bible-interpretatioin.png",
+    image: "/the life of a minister.jpeg",
   },
   {
     title: "THE LIFE OF CHRIST",
@@ -634,7 +634,7 @@ const rawMessages = [
   {
     title: "THE LOVE OF CHRIST",
     link: "https://mega.nz/folder/KxxygSbR#83-yAowmNcWJ92lnEIrpQ",
-    image: "/bible-interpretatioin.png",
+    image: "/the love of christ.jpeg",
   },
   {
     title: "THE MINISTRY",
@@ -654,12 +654,12 @@ const rawMessages = [
   {
     title: "THE POWER MINISTRY",
     link: "https://mega.nz/folder/f0A00Y7J#-5mCyBl5I79NVPGf5gbE",
-    image: "/bible-interpretatioin.png",
+    image: "/the power ministry.jpeg",
   },
   {
     title: "THE PURPOSE OF LOCAL CHURCH",
     link: "https://mega.nz/folder/OwJijDiS#chF1eEDqDpNniy3wQkPkQ",
-    image: "/bible-interpretatioin.png",
+    image: "/the purpose of local church.jpeg",
   },
   {
     title: "THE REALITY OF REDEMPTION",
@@ -669,17 +669,17 @@ const rawMessages = [
   {
     title: "THE REALITY OF THE HOLY SPIRIT",
     link: "https://mega.nz/folder/Lh4BhDYA#c2cmsasGEzsvSMeKhf032A",
-    image: "/bible-interpretatioin.png",
+    image: "/the reality of the spirit.jpeg",
   },
   {
     title: "THE REWARD OF MINISTRY",
     link: "https://mega.nz/folder/e5BhjBDR#fV1GEzdYwHLLqhUy52CfjQ",
-    image: "/bible-interpretatioin.png",
+    image: "/the reward of ministry.jpeg",
   },
   {
     title: "THE SHEPHERD AND HIS SHEPHERDS",
     link: "https://mega.nz/folder/ToJCATBJ#260DSseB6yrDYZWuT9wQ",
-    image: "/bible-interpretatioin.png",
+    image: "/the shepherd and his shepherds.jpeg",
   },
   {
     title: "THE SPIRIT AMONG US",
@@ -694,12 +694,12 @@ const rawMessages = [
   {
     title: "THE SPIRITUAL MAN",
     link: "https://mega.nz/folder/TsRVUZhI#CmnzUgkJYRB9W5jWkt_j1g",
-    image: "/bible-interpretatioin.png",
+    image: "/the spiritual man.jpeg",
   },
   {
     title: "THE SUPERNATURAL CONFERENCE '23",
     link: "https://mega.nz/folder/LpIz3ITL#4UiCV8u0JVWVYJcBxjQBlw",
-    image: "/bible-interpretatioin.png",
+    image: "/the supernatural conference 20222",
   },
   {
     title: "THE SUPERNATURAL CONFERENCE '24.",
@@ -719,7 +719,7 @@ const rawMessages = [
   {
     title: "THE TRAINING AND RESPONSIBILITY OF THE BELIEVER",
     link: "https://mega.nz/folder/eo4DQYDZ#UY6IgN2Fj0IlkBZ5_9TJsQ",
-    image: "/bible-interpretatioin.png",
+    image: "/the training and the responsibility of the believer.jpeg",
   },
   {
     title: "THE VISION",
@@ -749,22 +749,22 @@ const rawMessages = [
   {
     title: "THERE IS A LIFE WITHIN",
     link: "https://mega.nz/folder/zhZgFLiC#FLfOXvzi9qHduYZO943svw",
-    image: "/bible-interpretatioin.png",
+    image: "/there is life within.jpeg",
   },
   {
     title: "TO BE FILLED WITH THE SPIRIT",
     link: "https://mega.nz/folder/W9JxURzK#F0_Xx0nsIZhsh_xeYKSK3w",
-    image: "/bible-interpretatioin.png",
+    image: "/to be filled by the spirit.jpeg",
   },
   {
     title: "TO THE SAINT, YOU ARE A PREACHER",
     link: "https://mega.nz/folder/L9xDGASQ#SQbn-C9ZnbYWeGHGy-PhPw",
-    image: "/bible-interpretatioin.png",
+    image: "/to the saints you're a preacer.jpeg",
   },
   {
     title: "TONGUES AND INTERPRETATION",
     link: "https://mega.nz/folder/itxm1gD9#VezhkTsPTvX5vqP_wJzOHg",
-    image: "/bible-interpretatioin.png",
+    image: "/tongues and interpretation.jpeg",
   },
   {
     title: "TSC' 24",
@@ -774,7 +774,7 @@ const rawMessages = [
   {
     title: "UNDERSTANDING THE BOOK OF GENESIS",
     link: "https://mega.nz/folder/y4hnXQoD#3g7KDDiEBFxvooVCCRFMGA",
-    image: "/bible-interpretatioin.png",
+    image: "/understanding the book of genesis.jpeg",
   },
   {
     title: "VISION SUNDAY",
@@ -794,22 +794,22 @@ const rawMessages = [
   {
     title: "WHAT EVERY BELIEVER SHOULD KNOW",
     link: "https://mega.nz/folder/LtoFjYwQ#rRVTWWlI9oc0JTRocKXbg",
-    image: "/bible-interpretatioin.png",
+    image: "/what every believer should know.jpeg",
   },
   {
     title: "WHAT MATTERS MOST",
     link: "https://mega.nz/folder/Clp00JDb#_EdtzKMlTw8FHD5PiKMuug",
-    image: "/bible-interpretatioin.png",
+    image: "/what matters most.jpeg",
   },
   {
     title: "WHAT THE POWER OF GOD IS",
     link: "https://mega.nz/folder/r4gG2QbI#Aj9qunGixJljgX_eP9a9yg",
-    image: "/bible-interpretatioin.png",
+    image: "/What God's power is.jpeg",
   },
   {
     title: "WHEN HANDS ARE LAID",
     link: "https://mega.nz/folder/uoAikZKS#ILvN7cCnx_JLkht4jYkIw",
-    image: "/bible-interpretatioin.png",
+    image: "/when hands are laid.jpeg",
   },
   {
     title: "WHEN WE GATHER",
@@ -824,7 +824,7 @@ const rawMessages = [
   {
     title: "WHY WE HAVE THE LOCAL CHURCH",
     link: "https://mega.nz/folder/S84FXJKB#qjzMUnGara4_DdkrWIP9Ow",
-    image: "/bible-interpretatioin.png",
+    image: "/why we have the local church.jpeg",
   },
   {
     title: "WHY WE PRAY",
@@ -834,12 +834,12 @@ const rawMessages = [
   {
     title: "WORD CONFERENCE 2021",
     link: "https://mega.nz/folder/CwYAjLyb#bQFxnXRul01A4t3QiiqcMw",
-    image: "/bible-interpretatioin.png",
+    image: "/word conference 2021.jpeg",
   },
   {
     title: "WORD CONFERENCE 2022",
     link: "https://mega.nz/folder/XkQzRSjC#qt7PSliWvJ3X3pGKhm-XuQ",
-    image: "/bible-interpretatioin.png",
+    image: "/word conference 2022.jpeg",
   },
   {
     title: "WORD CONFERENCE 2023",
@@ -869,7 +869,7 @@ const rawMessages = [
   {
     title: "YIELDING TO INSTRUCTION",
     link: "https://mega.nz/folder/vhZjwITD#TmkfwHigJPzm04EO1elBhw",
-    image: "/bible-interpretatioin.png",
+    image: "/yielding to instructions.jpeg",
   },
   {
     title: "YOUR LEARNING",
