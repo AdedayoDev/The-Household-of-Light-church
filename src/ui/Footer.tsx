@@ -57,8 +57,8 @@ const Footer = () => {
                 partnering with us.
               </p>
               <div className='flex flex-col sm:flex-row gap-4'>
-                <Button className='capitalize' variant='church'>
-                  Give now
+                <Button asChild className='capitalize' variant='church'>
+                  <NavLink to='/partner'>Give now</NavLink>
                 </Button>
                 <Button className='font-medium text-lg md:text-xl bg-white text-primary hover:bg-slate-100'>
                   Radio Program Partnership
@@ -94,8 +94,8 @@ const Footer = () => {
                 partnering with us.
               </p>
               <div className='flex flex-col sm:flex-row gap-4'>
-                <Button className='capitalize' variant='church'>
-                  Give now
+                <Button asChild className='capitalize' variant='church'>
+                  <NavLink to='/partner'>Give now</NavLink>
                 </Button>
                 <Button className='font-medium text-lg md:text-xl bg-white text-primary hover:bg-slate-100'>
                   Radio Program Partnership

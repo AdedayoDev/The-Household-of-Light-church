@@ -1,12 +1,15 @@
 import { type FC } from "react";
 import { motion, type Variants } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
 interface LeadPastorProps {
   wrapperClassName?: string;
   titleClassName?: string;
   textClassName?: string;
+  showButton?: boolean;
+  sectionId?: string;
 }
 
 const containerVariants: Variants = {
@@ -49,42 +52,50 @@ const LeadPastor: FC<LeadPastorProps> = ({
   wrapperClassName = "",
   textClassName = "",
   titleClassName = "",
+  showButton = true,
+  sectionId,
 }) => {
   return (
-    <section className={`relative w-full py-16 md:py-24 overflow-hidden ${wrapperClassName}`}>
+    <section
+      id={sectionId}
+      className={`relative w-full py-16 md:py-24 overflow-hidden ${wrapperClassName}`}
+    >
       {/* Background Elements */}
-      <div className="absolute inset-0 -z-20">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-accent/10 dark:bg-accent/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/10 dark:bg-primary/5 rounded-full blur-3xl" />
+      <div className='absolute inset-0 -z-20'>
+        <div className='absolute top-0 right-0 w-96 h-96 bg-accent/10 dark:bg-accent/5 rounded-full blur-3xl' />
+        <div className='absolute bottom-0 left-0 w-96 h-96 bg-primary/10 dark:bg-primary/5 rounded-full blur-3xl' />
       </div>
 
       <motion.div
-        className="container-responsive grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center"
+        className='container-responsive grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center'
         variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
+        initial='hidden'
+        whileInView='visible'
         viewport={{ amount: 0.3, once: false }}
       >
         {/* Image */}
-        <motion.div variants={imageVariants} className="relative group order-2 md:order-1">
+        <motion.div
+          variants={imageVariants}
+          className='relative group order-2 md:order-1'
+        >
           {/* Glow Effect */}
           <motion.div
-            className="absolute -inset-6 bg-linear-to-br from-primary via-accent to-primary rounded-2xl blur-2xl opacity-0 group-hover:opacity-20 dark:group-hover:opacity-30 transition-opacity duration-300 -z-10"
+            className='absolute -inset-6 bg-linear-to-br from-primary via-accent to-primary rounded-2xl blur-2xl opacity-0 group-hover:opacity-20 dark:group-hover:opacity-30 transition-opacity duration-300 -z-10'
             animate={{ scale: [1, 1.1, 1] }}
             transition={{ duration: 3, repeat: Infinity }}
           />
 
           {/* Image Container */}
-          <div className="relative rounded-2xl border border-border dark:border-primary/20 overflow-hidden shadow-lg dark:shadow-primary/10 hover:shadow-xl dark:hover:shadow-primary/20 transition-shadow">
+          <div className='relative rounded-2xl border border-border dark:border-primary/20 overflow-hidden shadow-lg dark:shadow-primary/10 hover:shadow-xl dark:hover:shadow-primary/20 transition-shadow'>
             <img
-              src="/leadPastor.svg"
-              alt="Lead Pastor"
-              className="w-full h-auto object-cover"
-              loading="lazy"
-              decoding="async"
+              src='/leadPastor.svg'
+              alt='Lead Pastor'
+              className='w-full h-auto object-cover'
+              loading='lazy'
+              decoding='async'
             />
             {/* Image Overlay */}
-            <div className="absolute inset-0 bg-linear-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className='absolute inset-0 bg-linear-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300' />
           </div>
         </motion.div>
 
@@ -95,9 +106,9 @@ const LeadPastor: FC<LeadPastorProps> = ({
         >
           {/* Badge */}
           <motion.div variants={itemVariants}>
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 dark:bg-accent/10 rounded-full border border-primary/20 dark:border-accent/20">
-              <span className="w-2 h-2 bg-primary dark:bg-accent rounded-full animate-pulse" />
-              <span className="text-xs font-semibold text-primary dark:text-accent uppercase">
+            <div className='inline-flex items-center gap-2 px-3 py-1 bg-primary/10 dark:bg-accent/10 rounded-full border border-primary/20 dark:border-accent/20'>
+              <span className='w-2 h-2 bg-primary dark:bg-accent rounded-full animate-pulse' />
+              <span className='text-xs font-semibold text-primary dark:text-accent uppercase'>
                 Meet our pastor
               </span>
             </div>
@@ -112,23 +123,44 @@ const LeadPastor: FC<LeadPastorProps> = ({
           </motion.h2>
 
           {/* Description */}
-          <motion.div className="space-y-4" variants={containerVariants}>
-            <motion.p variants={itemVariants} className="body-lg text-foreground/70 dark:text-accent/80">
-              Pastor Ipaye Isaac is a passionate minister of the Gospel, committed to unveiling the revelation of Christ and raising believers into the full stature of who they are in Him. Known for his clarity of teaching, depth of understanding, and strong alignment with the Scriptures, he carries a unique grace to illuminate the finished works of Christ and bring men into maturity.
+          <motion.div className='space-y-4' variants={containerVariants}>
+            <motion.p
+              variants={itemVariants}
+              className='body-lg text-foreground/70 dark:text-accent/80'
+            >
+              Pastor Ipaye Isaac is a passionate minister of the Gospel,
+              committed to unveiling the revelation of Christ and raising
+              believers into the full stature of who they are in Him. Known for
+              his clarity of teaching, depth of understanding, and strong
+              alignment with the Scriptures, he carries a unique grace to
+              illuminate the finished works of Christ and bring men into
+              maturity.
             </motion.p>
 
-            <motion.p variants={itemVariants} className="body-lg text-foreground/70 dark:text-accent/80">
-              Driven by a burning desire to see believers grow beyond religion into true spiritual understanding, Pastor Isaac teaches with simplicity, accuracy, and the power of the Spirit. His ministry is marked by a strong emphasis on identity in Christ, spiritual growth, sound doctrine, and the practical expression of God’s love.
+            <motion.p
+              variants={itemVariants}
+              className='body-lg text-foreground/70 dark:text-accent/80'
+            >
+              Driven by a burning desire to see believers grow beyond religion
+              into true spiritual understanding, Pastor Isaac teaches with
+              simplicity, accuracy, and the power of the Spirit. His ministry is
+              marked by a strong emphasis on identity in Christ, spiritual
+              growth, sound doctrine, and the practical expression of God’s
+              love.
             </motion.p>
           </motion.div>
 
           {/* CTA Button */}
-          <motion.div variants={itemVariants} className="pt-4">
-            <Button className="btn-primary gap-2 group">
-              Learn More About Pastor
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Button>
-          </motion.div>
+          {showButton && (
+            <motion.div variants={itemVariants} className='pt-4'>
+              <Button asChild className='btn-primary gap-2 group'>
+                <Link to='/about-us#lead-pastor'>
+                  Learn More About Pastor
+                  <ArrowRight className='w-4 h-4 group-hover:translate-x-1 transition-transform' />
+                </Link>
+              </Button>
+            </motion.div>
+          )}
         </motion.div>
       </motion.div>
     </section>
